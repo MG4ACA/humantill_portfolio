@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="update">
+
+	<link rel='shortcut icon' href='https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/images/favicon.png'/>
+    <!-- Bootstrap Core CSS -->
+    <link href="https://www.malibangroup.com/wp-content/themes/maliboon/css/transitions.css" rel="stylesheet">
+    <link href="https://www.malibangroup.com/wp-content/themes/maliboon/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="https://www.malibangroup.com/wp-content/themes/maliboon/css/maliban-group-main.css" rel="stylesheet">
+    <link href="https://www.malibangroup.com/wp-content/themes/maliboon/css/agri.css" rel="stylesheet">
+    <link href="https://www.malibangroup.com/wp-content/themes/maliboon/css/milk.css" rel="stylesheet">
+    <link href="https://www.malibangroup.com/wp-content/themes/maliboon/css/contact.css" rel="stylesheet">
+    <link href="https://www.malibangroup.com/wp-content/themes/maliboon/css/main-media.css" rel="stylesheet">
+
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="https://www.malibangroup.com/wp-content/themes/maliboon/fonts/social-icons/font/flaticon.css">
+    <script src="https://www.malibangroup.com/wp-content/themes/maliboon/js/group-main.js"></script> 
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.typekit.net/vux5fyi.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet">
+	<script src="https://use.typekit.net/yzd0zyt.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdSGvkUAAAAAFOjH31xXPdsUn7MaQurihuArYpe"></script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Removed GA code --script async src="https://www.googletagmanager.com/gtag/js?id=UA-18528057-17"></script-->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-18528057-17');
+    </script>
+  
+	
+		
+<!-- Tele Icon -->		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<div class="content-example">
+	<!-- Start Component -->
+	
+	<div id="gmg-side-popup" class="gmg-side-popup">
+	    <div class="gmg-sp-header">
+	    	<div class="gmg-sp-ballon icon-ballon">
+	    	  <img class="img-responsive" style="width:100%;" alt="" src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/common/tele-ikcon.png">
+	    	</div>
+	    	<h3 class="title">Contact Us</h3>
+	    </div>
+	    
+	    <div class="gmg-sp-content"> 
+	    	<img class="img-responsive" style="width:100%;" alt="" src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/common/new-contact2.jpg">
+	    </div>
+	    
+	</div> <!-- GMG Side Popup -->
+	<!-- GMG Side Popup FORM -->	
+	<!-- End Component -->
+</div>
+
+	<style>
+/* Not neccesary */
+.content-example {
+	display: block;
+    margin: 0 auto;
+    position: relative;
+    background: #fff;
+}
+.gmg-side-popup .title {
+	margin: 0;
+}
+/* Not neccesary */
+
+
+/*------ GMG Side Popup --------*/
+.gmg-side-popup {
+    cursor: pointer;
+    width: 172px;
+    height: 65px;
+    position:fixed;
+    right:0px;
+    bottom:130px;
+    background: transparent;
+    transition: all 0.8s ease;
+    z-index: 1;
+	overflow: hidden; 
+}
+.gmg-side-popup.open {
+    width: 240px;
+    height: 252px;
+}
+.gmg-sp-close {
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.gmg-side-popup.open .gmg-sp-close{
+    -moz-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.gmg-sp-ballon {
+  height: 35px;
+    width: 120px;
+    display: block;
+    margin: 0 auto;
+    padding: 13px 0;
+}
+.gmg-sp-ballon svg {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+}
+.gmg-side-popup .title,
+.gmg-side-popup .gmg-sp-content {
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+	opacity: 0;
+	visibility: hidden;
+}
+.gmg-side-popup.open .title,
+.gmg-side-popup.open .gmg-sp-content {
+	opacity: 1;
+	visibility: visible;
+}
+
+.gmg-side-popup .title {
+	min-width: 220px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    color: transparent;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gmg-sp-content {
+	padding: 0 8px;
+}
+
+.gmg-sp-button {
+	display: flex;
+	float: left;
+	width: 100%;
+	min-width: 220px; 
+	min-height: 60px;
+	background: #fff;
+	line-height: 18px;
+	color: #5c6770;
+	align-items: center;
+	border-bottom: 1px solid #ccc;
+}
+a.gmg-sp-button:hover {
+	background: #fbfbfb;
+	text-decoration: none;
+}
+.gmg-sp-button.tell {
+	cursor: default;
+}
+.gmg-side-popup .gmg-sp-button:nth-child(3) {
+	border: 0;
+}
+
+.gmg-sp-button .desc {
+	font-size: 14px;
+}
+.gmg-sp-button .icon {
+	padding: 10px;
+    font-size: 14px;
+}
+
+.gmg-side-popup .title,
+.gmg-side-popup-form .title {
+	line-height: 40px;
+}
+
+/*------ GMG Side Popup FORM --------*/
+.gmg-side-popup-form {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	z-index: 9999;
+	
+}
+
+.gmg-spf-container {
+	width: 258px;
+    height: 400px;
+    background: #5c6770;
+    padding: 10px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    margin-left: -129px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 999;
+}
+.gmg-spf-overlay {
+	background: #000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    z-index: 99;
+    opacity: 0.4;
+}
+.gmg-spf-close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #fff;
+}
+.gmg-spf-header,
+.gmg-spf-content,
+.gmg-spf-header * {
+    float: left;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+.gmg-spf-header .icon {
+	padding: 15px 0 5px;
+	font-size: 26px;
+	color: #fff;
+	text-align: center;
+}
+.gmg-spf-header .title{
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.gmg-spf-content {
+    background: #fff;
+    height: calc(100% - 87px);
+    
+    color: #000;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'gmg-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-plus svg{
+  width: 10px;
+  height: 10px;
+  fill: #fff;
+}
+.icon-clock svg,
+.icon-phone svg {
+  fill: #5c6770;
+  width: 16px;
+}
+		
+
+</style>
+
+<script>
+
+$( '.gmg-sp-header, .gmg-sp-close' ).click(function(){
+	$('#gmg-side-popup').toggleClass( 'open' );
+});
+
+// Form Modal Popup
+$('#gmg-spf-button').click(function(e) {
+	e.preventDefault();
+	$('#gmg-side-popup-form').fadeIn('fast');
+});
+
+$('.gmg-spf-overlay, .gmg-spf-close').click(function() {
+	$('#gmg-side-popup-form').fadeOut('fast');
+});
+
+</script>	
+<!-- Tele Icon -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://cdn.websitepolicies.io/lib/cookieconsent/1.0.3/cookieconsent.min.js" defer></script>
+    <script>window.addEventListener("load",function(){window.wpcc.init({"border":"normal","corners":"small","colors":{"popup":{"background":"#000000","text":"#ffffff","border":"#000000"},"button":{"background":"#23d700","text":"#ffffff"}},"padding":"small","margin":"small","content":{"button":"Allow Cookies"}})});</script>
+	
+	
+
+<head>
+    <link href="https://www.malibangroup.com/wp-content/themes/maliboon/css/about.css" rel="stylesheet">
+    <meta name="author" content="">
+    <meta name="keywords" content="premium biscuit manufacturer in Sri Lanka">
+    <title>Page not found</title>
+</head>
+
+<body class="body-404">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-inverse-white text-black" style="/*margin-top: 0%; background-color: rgb(97, 97, 97);*/">
+<!-- navigation inner -->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand hidden-sm hidden-xs" href="/"><img class="img-responsive" alt="" src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/common/maliban-logo2.png" /></a>
+            <a class="navbar-brand visible-sm visible-xs" href="/"><img class="img-responsive" alt="" style="width: 45%;"
+                    src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/common/maliban-logo2.png" /></a>
+        </div>
+
+        <!-- <div class="input-group navbar-right nav-searc-top hidden-sm hidden-xs">
+            <input type="text" class="form-control" placeholder="Search ">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </span>
+        </div> -->
+
+        <div class="btn-group pull-right hidden-sm hidden-xs" role="group" aria-label="..." style="margin-top: 15px; ">
+			
+            <a href="https://www.facebook.com/malibanbiscuits.lk/" target="_blank" class="btn btn-default social-button" style=" border:0px solid #f3f0e7;"><i class="fa fa-facebook fa-lg"
+                    aria-hidden="true"></i></a>
+            
+            <a href="https://www.youtube.com/channel/UCB9vVJw46JNnY4-wQYgrcYQ" target="_blank" class="btn btn-default social-button" style=" border:0px solid #f3f0e7;"><i class="fa fa-youtube fa-lg"
+                    aria-hidden="true"></i></a>
+        </div>
+
+
+        <div class="clearfix"></div>
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="para" href="/">HOME</a>
+                </li>
+                <li>
+                    <a class="para" href="/about-us">ABOUT US</a>
+                </li>				
+                <li>
+                    <a class="para" href="/exports">EXPORTS</a>
+                </li>
+                <li class="dropdown mega-dropdown para hidden-md hidden-sm hidden-xs">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">PRODUCTS<span
+            class="caret"></span></a></span></a>
+
+    <ul class="dropdown-menu mega-dropdown-menu row">
+        <li class="col-sm-3">
+            <ul>
+
+                <a href="/maliban-biscuit" id="bis-logo">
+                    <div class="hvr">
+                        <li class="dropdown-header menu-logo">
+                            <img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/common/maliban-bis-menu.png" alt="maliban biscuit logo">
+                        </li>
+                    </div>
+                </a>
+                <a href="/maliban-agri" id="agri-logo">
+                    <div class="hvr">
+                        <li class="dropdown-header menu-logo">
+                            <img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/common/maliban-agri-menu-logo.png" alt="maliban agri logo">
+                        </li>
+                    </div>
+                </a>
+                <a href="/maliban-milk" id="milk-logo">
+                    <div class="hvr">
+                        <li class="dropdown-header menu-logo">
+                            <img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/common/maliban-milk-menu.png" alt="maliban milk logo">
+                        </li>
+                    </div>
+                </a>
+                <a href="/little-lion" id="little-logo">
+                    <div class="hvr">
+                        <li class="dropdown-header menu-logo">
+                            <img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/little-lion/output-onlinepngtools (1).png" style="width:95%;" alt="little lion logo">
+                        </li>
+                    </div>
+                </a>
+
+            </ul>
+        </li>
+        <li class="col-sm-3 bis-range animatable fadeIn">
+            <ul>
+                <a href="/cracker">
+                    <li class="dropdown-header">Cracker Range</li>
+                </a>
+                <li><a href="/smart-cream-cracker">Maliban Cream Cracker</a></li>
+                <li><a href="/bran-cracker">Real Bran Cracker</a></li>
+                <li><a href="/spicy-cracker">Spicy Cracker</a></li>
+                <li><a href="/veggie-cracker">Veggie Cracker</a></li>
+                <li><a href="/cracker-thins">Cracker Thins</a></li>
+                <!-- <li class="divider"></li> -->
+                <a href="/cream">
+                    <li class="dropdown-header">Cream Range</li>
+                </a>
+                <li><a href="/orange-cream">Orange Cream</a></li>
+                <li><a href="/custard-cream">Custard Cream</a></li>
+                <li><a href="/real-double-chocolate-and-vanila">Real Double Chocolate & Vanilla</a></li>
+                <li><a href="/real-double-strawberry-and-vanila">Real Double Strawberry & Vanilla</a>
+                </li>
+                <li><a href="/chocolate-cream">Real Chocolate Cream</a></li>
+                <!-- <li class="divider"></li> -->
+                <a href="/puff">
+                    <li class="dropdown-header">Puff Range</li>
+                </a>
+                <li><a href="/lemon-puff">Lemon Puff</a></li>
+                <li><a href="/chocolate-puff">Chocolate Puff</a></li>
+                <li><a href="/white-chocolate-puff">White Chocolate Puff</a></li>
+                <li><a href="/cheese-puff">Cheese Puff</a></li>
+                <!-- <li class="divider"></li> -->
+                <a href="/health-and-wellness">
+                    <li class="dropdown-header">Health Range</li>
+                </a>
+                <li><a href="/sugar-free">Sugar Free</a></li>
+                <li><a href="/bran-cracker">Bran Cracker</a></li>
+				<li><a href="/maliban-digestive">Maliban Digestive<span class="label label-danger">New</span></a></li>
+				<li><a href="/less-sugar-range">30% Less Sugar Range <span class="label label-danger">New</span></a></li>
+            </ul>
+        </li>
+        <li class="col-sm-3 bis-range animatable fadeIn">
+            <ul>
+                <a href="/sweet">
+                    <li class="dropdown-header">Sweet Range</li>
+                </a>
+                <li><a href="/milk-short-cake">Milk Short Cake</a></li>
+                <li><a href="/inguru">Inguru</a></li>
+                <li><a href="/nice">Nice</a></li>
+                <li><a href="/sorties">Sorties</a></li>
+                <li><a href="/gold-marie">Gold Marie</a></li>
+                <li><a href="/light-marie">Light Marie</a></li>
+                <li><a href="/chocolate-marie">Chocolate Marie</a></li>
+                <li><a href="/chocolate-wafers">Chocolate Wafers</a></li>
+                <li><a href="/vanila-wafers">Vanilla Wafers</a></li>
+				<li><a href="/lemon-wafers">Lemon Wafers <span class="label label-danger">New</span></a></li>
+                <li><a href="/gem">Gem</a></li>
+                <li><a href="/hawaiian-cookies">Hawaiian Cookies</a></li>
+                <li><a href="/yo-yo-lemon">Yo Yo Lemon</a></li>
+                <li><a href="/yo-yo-choco">Yo Yo Choco</a></li>
+                <li><a href="/yo-yo-vanila">Yo Yo Vanilla</a></li>            
+                <li><a href="/double-twist-cookies">Double Twist Cookies</a></li>
+				<li><a href="/zellers-imorre">Zellers Imorre<span class="label label-danger">New</span></a></li>
+				<li><a href="/zellers-roundies">Zellers Roundies<span class="label label-danger">New</span></a></li>
+				<li><a href="/chekkers-coffee-cookies">Chekkers Coffee Cookies <span class="label label-danger">New</span></a></li>
+
+
+            </ul>
+        </li>
+        <li class="col-sm-3 bis-range animatable fadeIn">
+            <ul>
+                <a href="/gift-assortment">
+                    <li class="dropdown-header">Gift Assortment Range</li>
+                </a>
+                <li><a href="/gift-selection">Gift Selection</a></li>
+                <li><a href="/tea-time-assortment">Tea Time Assortment</a></li>
+                <li><a href="/classic-biscuit-assortment">Classique Biscuit Assortment</a></li>
+                <li><a href="/family-collection">Family Collection</a></li>
+
+                <!-- <li class="divider"></li> -->
+                <a href="/savoury">
+                    <li class="dropdown-header">Savoury Range</li>
+                </a>
+                <li><a href="/krisco">Krisco</a></li>
+                <li><a href="/cheesebits">Cheesebits</a></li>
+                <li><a href="/chick-bits">Chick Bits</a></li>
+                <li><a href="/snackers-cheese-and-chillie">Snackers Cheese & Chillie</a></li>
+                <li><a href="/snackers-masala">Snackers Masala</a></li>
+                <li><a href="/snackers-spicy">Snackers Spicy</a></li>
+				<li><a href="/snackers-korean-ramen">Snackers Korean Ramen</a></li>
+				<li><a href="/maliban-tempo">Maliban Tempo</a></li>
+                <!-- <li class="divider"></li> -->
+                <a href="/premium">
+                    <li class="dropdown-header">Premium Range</li>
+                </a>
+                <li><a href="/real-temptation-white">Real Temptation White</a></li>
+                <li><a href="/real-temptation-dark">Real Temptation Dark</a></li>
+                <li><a href="/real-temptation-coffee">Real Temptation Coffee</a></li>
+				<li><a href="/real-temptation-hazelnut">Real Temptation Hazelnut<span class="label label-danger">New</span></a></li>
+
+
+            </ul>
+        </li>
+        <!-- Milk Range  -->
+        <li class="col-sm-3 milk-range animatable fadeIn">
+            <ul>
+                <a href="/maliban-kiri">
+                    <li class="dropdown-header">Maliban Kiri</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/maliban-kiri"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/menu/mom-kid.jpg" style="width: 100%;" alt="maliban kiri image"></a>
+                </div>
+<!--                 <a href="/maliban-malt">
+                    <li class="dropdown-header">Maliban Malt</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/maliban-malt"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/menu/malt.jpg"
+                            style="width: 100%;"></a>
+                </div> -->
+
+            </ul>
+        </li>
+		
+		
+		<li class="col-sm-3 milk-range animatable fadeIn">
+            <ul>
+                <a href="/maliban-malt">
+                    <li class="dropdown-header">Maliban Malt</li>
+                </a>
+                <div class="agri-megamenu-image">
+                  <a href="/maliban-malt"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/menu/malt-menu.jpg" style="width: 100%;" alt="maliban malt image"></a>
+                </div>
+
+            </ul>
+        </li>
+
+		
+        <li class="col-sm-3 milk-range animatable fadeIn">
+            <ul>
+                <a href="/maliban-vitagen">
+                    <li class="dropdown-header">Nutritional Range</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/maliban-vitagen"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/menu/nutrition.jpg" style="width: 100%;" alt="maliban nutrutional range image"></a>
+                </div>
+                <!-- <a href="/slim-fit">
+                    <li class="dropdown-header">Milk Mix</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/slim-fit"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/menu/milkmix.jpg"
+                            style="width: 100%;"></a>
+                </div> -->
+            </ul>
+        </li>
+		<li class="col-sm-3 milk-range animatable fadeIn">
+            <ul>
+                <a href="/">
+                    <li class="dropdown-header">Fresh Milk</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/fresh-milk"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/menu/fresh-milk-menu.jpg" style="width: 100%;" alt="maliban fresh milk image"></a>
+                </div>
+            </ul>
+        </li>
+
+
+        <!-- Agri Range  -->
+        <li class="col-sm-3 agri-range animatable fadeIn">
+            <ul>
+                <a href="/maliban-tea">
+                    <li class="dropdown-header">Maliban Tea</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/maliban-tea"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/agri/tea.jpg" style="width: 100%;" alt="maliban tea image"></a>
+                </div>
+
+
+            </ul>
+        </li>
+        <li class="col-sm-3 agri-range animatable fadeIn">
+            <ul>
+                <a href="/maliban-kahata-poronduwa"><li class="dropdown-header">Maliban Kahata Poronduwa</li></a>
+                <div class="agri-megamenu-image">
+                    <a href="/maliban-kahata-poronduwa"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/agri/Kahata Poronduwa-1500x762.jpg" style="width: 100%;" alt="maliban kahata poronduwa image"></a>
+                </div>
+
+
+            </ul>
+        </li>
+        <li class="col-sm-3 agri-range animatable fadeIn">
+            <ul>
+                <a href="/maliban-yahaposha">
+                    <li class="dropdown-header">Maliban Yaha Posha</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/maliban-yahaposha"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/agri/yahaposha2-menu.jpg" style="width: 100%;" alt="maliban yaha posha image"></a>
+                </div>
+
+            </ul>
+        </li>
+		<li class="col-sm-3 agri-range animatable fadeIn">
+            <ul>
+                <a href="/maliban-coffee">
+                    <li class="dropdown-header">Maliban Coffee</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/maliban-coffee"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/menu/coffee-menu-2.jpg" style="width: 100%;" alt="maliban coffee image"></a>
+                </div>
+
+            </ul>
+        </li>
+		<li class="col-sm-3 agri-range animatable fadeIn">
+            <ul>
+                <a href="/bopf">
+                    <li class="dropdown-header">BOPF</li>
+                </a>
+                <div class="agri-megamenu-image">
+                    <a href="/bopf"><img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/menu/bopf-menu.jpg" style="width: 100%;" alt="maliban bopf image"></a>
+                </div>
+
+            </ul>
+        </li>
+
+        <!-- little-lion -->
+        <li class="col-sm-3 little-range animatable fadeIn">
+            <ul>
+                <a href="/little-lion-biscuits">
+                    <li class="dropdown-header">Biscuits Range</li>
+                </a>
+                <li><a href="/little-lion-batter-carol">Batter Carols</a></li>
+                <li><a href="/little-lion-cookies">Cookies</a></li>
+                <li><a href="/little-lion-wafers">Wafers</a></li>
+
+                <!-- <li class="divider"></li> -->
+                <a href="/little-lion-cakes">
+                    <li class="dropdown-header">Cakes Range</li>
+                </a>
+                <li><a href="/little-lion-packeted-cakes">Packeted Cakes</a></li>
+                <li><a href="/little-lion-sponge-rolls">Sponge Rolls</a></li>
+                <li><a href="/little-lion-ambient">Soft Log</a></li>
+
+                <!-- <li class="divider"></li> -->
+                <a href="/little-lion-baby-products">
+                    <li class="dropdown-header">Baby Rusks</li>
+                </a>
+                <li><a href="/little-lion-golden-cow-original">Golden Cow Original</a></li>
+                <li><a href="/little-lion-golden-cow-banana">Golden Cow Banana</a></li>
+                <li><a href="/little-lion-golden-cow-apple">Golden Cow Apple</a></li>
+
+                <!-- <li class="divider"></li> -->
+                <a href="/little-lion-bakery-items">
+                    <li class="dropdown-header">Bakery Items Range</li>
+                </a>
+                <li><a href="/little-lion-buns">Buns</a></li>
+                <li><a href="/little-lion-pastries">Pastries</a></li>
+                <li><a href="/little-lion-fried-items">Fried Items</a></li>
+                <li><a href="/little-lion-sweets">Sweets</a></li>
+
+            </ul>
+        </li>
+        <li class="col-sm-3 little-range animatable fadeIn">
+            <ul>
+                <a href="/little-lion-customized-cakes">
+                    <li class="dropdown-header">Customized Cakes Range</li>
+                </a>
+                <li><a href="/little-lion-birthday">Birthday Cakes</a></li>
+                <li><a href="/little-lion-anniversary">Anniversary Cakes</a></li>
+                <li><a href="/little-lion-celebration">Celebration Cakes</a></li>
+                <li><a href="/little-lion-structure">Structure Cakes</a></li>
+
+
+
+            </ul>
+        </li>
+
+    </ul>
+</li>                <li class="dropdown hidden-lg hidden-xl">
+                    <a class="dropdown-toggle para" data-toggle="dropdown" href="#">PRODUCTS
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu para">
+                        <li><a href="/maliban-biscuit">BISCUITS</a></li>
+                        <li><a href="/maliban-milk">MILK</a></li>
+                        <li><a href="/maliban-agri">AGRI</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="para" href="/sustainability">SUSTAINABILITY</a>
+                </li>
+                <li>
+                    <a class="para" href="/tv-commercials">MEDIA</a>
+                </li>
+                <li>
+                    <a class="para" href="/careers">CAREERS</a>
+                </li>
+                <li>
+                    <a class="para" href="/contact-us">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Page Content -->
+    <h1 class="heading-404">Page not found</h1>
+
+    <div class="img-404">
+        <img src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/images/maliban-broeken-cookie-image.png" alt="404 image">
+    </div>
+
+    <p class="para w-400 justify para-404">Please visit our sitemap to find what you're looking for.</p>
+    <a href="/sitemap">
+        <button class="btn-404">Sitemap</button>
+    </a>
+
+        <!-- Page Content -->
+    <div class="col-xs-12" style="background-color:#ae0a09; margin-top:50px; padding-top:50px;">
+
+    	<div class="container container-cs">
+    		<div class="row">
+
+    			<div class="col-md-6">
+    				<div class="row footer-alignment-fix">
+    					<div class="col-md-3">
+    						<a href="https://www.malibangroup.com/"><img class="img-responsive center-xs" alt="" src="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min/common/logo-footer.png" /></a>
+    					</div>
+    					<div class="col-md-9">
+    						<p style="color: #fff; font-size: 16px">ISO 9001, ISO 14001, ISO 22000, ISO 45001, 14064-1 and FSSC 22000 certified
+company</p>
+    					</div>
+    				</div>
+    				<hr>
+    				<div class="btn-group btn-group-justified" role="group" aria-label="...">
+    					<div class="btn-group" role="group">
+    						<a href="/contact-us" class="btn btn-default footer-menu bg-trans border-trans" style="color:#f3f0e7">Contact Us</a>
+    					</div>
+
+    					<!-- <div class="btn-group" role="group">
+    						<a href="https://malibangroup-2024.sgp1.digitaloceanspaces.com/theme/images-min//about/Environmental Policy.pdf" class="btn btn-default footer-menu bg-trans border-trans"
+    							style="color:#f3f0e7">Environmental Policy</a>
+    					</div> -->
+
+    					<!-- <div class="btn-group" role="group">
+    						<a href="#" class="btn btn-default footer-menu bg-trans border-trans " style=" color:#f3f0e7">Sitemap</a>
+    					</div> -->
+    					<!-- <div class="btn-group" role="group">
+    						<a href="#" class="btn btn-default footer-menu bg-trans border-trans " style="color:#f3f0e7">Legal</a>
+    					</div> -->
+    					<div class="btn-group hidden-xs" role="group">
+    						<a href="/privacy-policy" class="btn btn-default footer-menu bg-trans border-trans " style="color:#f3f0e7">Privacy Policy</a>
+    					</div>
+    					<div class="btn-group hidden-xs" role="group">
+    						<a href="/cookie-policy" class="btn btn-default footer-menu bg-trans border-trans " style="color:#f3f0e7">Cookie Policy</a>
+    					</div>
+    					<!-- <div class="btn-group hidden-xs" role="group">
+    						<a href="#" class="btn btn-default footer-menu bg-trans border-trans "
+    							style="color:#f3f0e7">Feedback</a>
+    					</div> -->
+    				</div>
+
+    				<div class="btn-group btn-group-justified visible-xs" role="group" aria-label="...">
+    					<div class="btn-group" role="group">
+    						<a href="/privacy-policy" class="btn btn-default footer-menu bg-trans border-trans " style="color:#f3f0e7">Privacy
+    							Policy</a>
+    					</div>
+    					<!-- <div class="btn-group" role="group">
+    						<a href="#" class="btn btn-default footer-menu bg-trans border-trans "
+    							style="color:#f3f0e7">Feedback</a>
+    					</div> -->
+    				</div>
+
+    			</div>
+
+    			<div class="col-md-6">
+
+    				<div class="btn-group pull-right sos-icon-line" role="group" aria-label="...">
+
+    					<div class="btn-group" role="group">
+    						<a href="/sitemap" class="btn btn-default footer-menu bg-trans border-trans" style="color:#f3f0e7">Sitemap</a>
+    					</div>
+
+    					<p class="btn social-button hidden-xs" style="margin-right: 3px; color:#ffffff; font-size: 22px;">JOIN US
+    						ON</p>
+							
+    					<a href="https://www.facebook.com/malibanbiscuits.lk/" class="btn btn-default social-button bg-trans no-bg" style=" border-right: 2px solid #f3f0e7;" target="_blank"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+    					<!-- <a href="#" class="btn btn-default social-button bg-trans no-bg"
+    						style=" border-right: 2px solid #f3f0e7;"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a>
+    					<a href="#" class="btn btn-default social-button bg-trans no-bg"
+    						style=" border-right: 2px solid #f3f0e7;"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+    					<a href="#" class="btn btn-default social-button bg-trans no-bg"
+    						style=" border-right: 2px solid #f3f0e7;"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a> -->
+    					<a href="https://www.youtube.com/channel/UCB9vVJw46JNnY4-wQYgrcYQ" class="btn btn-default social-button bg-trans no-bg" target="_blank"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+    				</div>
+    				<div class="clearfix"></div>
+    				<hr>
+
+    				<!--bestweb logo-->
+    				
+    				<div class="clearfix"></div>
+    				<p class=" text-right status-ft hidden-xs" style="margin-right: 3px; color:#ffffff; margin-top:10px;">©
+    					2025 Maliban Biscuit Manufactories (Pvt) Limited <a class="web-design-by" style="padding-left: 20px;" href="http://www.3cs.lk/" target="_blank">Web Design by 3CS</a></p>
+    				<p class=" text-center status-ft visible-xs" style="margin-right: 3px; color:#ffffff; margin-top:10px;">©
+    					2025 Maliban Biscuit Manufactories (Pvt) Limited | <a class="web-design-by" style="padding-left: 20px;" href="http://www.3cs.lk/" target="_blank">Web Design by 3CS</a></p>
+
+    			</div>
+
+    		</div>
+    	</div>
+
+    </div>
+    <!-- /.container -->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+    <script src="js/group-main.js"></script>-->
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    	$('.carousel').carousel({
+    		interval: 5000 //changes the speed
+    	});
+
+    	$(function() {
+    		$('.scroll-down').click(function() {
+    			$('html, body').animate({
+    				scrollTop: $('section.ok').offset().top
+    			}, 'slow');
+    			return false;
+    		});
+    	});
+
+    	$('nav').affix({
+    		offset: {
+    			top: 205
+    		}
+    	});
+    </script>
+
+	<!--<script src="https://cdn.enable.co.il/licenses/enable-L8443s2wcpftljz-0421-46809/init.js"></script>-->
+</body>
+
+</html>
