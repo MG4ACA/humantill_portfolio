@@ -1,0 +1,154 @@
+/* HumaniTill Interactive Map Styles */
+
+/* Base SVG and district styles */
+.map-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.map-visual svg {
+  max-width: 100%;
+  height: auto;
+  transform: scale(0.8);
+  transform-origin: center top;
+}
+
+.map-visual svg path {
+  fill: #e0e0e0;
+  stroke: #ffffff;
+  stroke-width: 0.5;
+  transition: fill 0.3s ease;
+}
+
+.map-visual svg path:hover {
+  fill: #ff4d6a;
+  stroke: #e9e8e8;
+  stroke-width: 1;
+  cursor: pointer;
+}
+
+/* Event markers */
+.event-marker {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.event-marker:hover {
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+.event-marker.active {
+  fill: #90ee90;
+  animation: pulse-active 2s infinite, pulse-scale 2s infinite;
+}
+
+.event-marker.past {
+  fill: #ffb6c1;
+}
+
+.event-marker.future {
+  fill: #87ceeb;
+}
+
+/* Layout */
+.map-container {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.map-section {
+  flex: 3;
+}
+
+.sidebar {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Event details */
+.event-details {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.event-details h3 {
+  color: #c41e3a;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #c41e3a;
+  padding-bottom: 0.5rem;
+}
+
+.event-info {
+  margin-bottom: 1rem;
+}
+
+.event-info strong {
+  color: #333;
+  display: inline-block;
+  min-width: 120px;
+}
+
+.event-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.event-status.active {
+  background: #90ee90;
+  color: #2d5016;
+}
+
+.event-status.past {
+  background: #ffb6c1;
+  color: #8b2635;
+}
+
+.event-status.future {
+  background: #87ceeb;
+  color: #1e4a5f;
+}
+
+.beneficiaries-count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c41e3a;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.event-description {
+  background: white;
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 4px solid #c41e3a;
+  margin-top: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .map-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sidebar {
+    order: -1;
+  }
+
+  .event-details {
+    max-height: 300px;
+  }
+}
