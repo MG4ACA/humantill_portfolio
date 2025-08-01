@@ -99,11 +99,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const bbox = pathElement.getBBox();
         const svg = pathElement.ownerSVGElement;
         const pathTransform = pathElement.getCTM();
-        
+
         // Calculate center of the path
         let centerX = bbox.x + bbox.width / 2;
         let centerY = bbox.y + bbox.height / 2;
-        
+
         // Apply any transforms that are applied to the path
         if (pathTransform) {
           const point = svg.createSVGPoint();
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
           centerX = transformedPoint.x;
           centerY = transformedPoint.y;
         }
-        
+
         return {
           x: centerX,
           y: centerY,

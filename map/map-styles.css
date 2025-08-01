@@ -22,7 +22,7 @@
 }
 
 .map-visual svg path:hover {
-  fill: #ff9797;
+  fill: #ff4d6a;
   stroke: #e9e8e8;
   stroke-width: 1;
   cursor: pointer;
@@ -41,6 +41,7 @@
 
 .event-marker.active {
   fill: #90ee90;
+  animation: pulse-active 2s infinite, pulse-scale 2s infinite;
 }
 
 .event-marker.past {
