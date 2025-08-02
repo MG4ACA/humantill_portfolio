@@ -29,6 +29,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px; /* Offset for fixed navbar */
 }
 
 .container {
@@ -186,10 +187,10 @@ html {
 }
 
 .hero-rest-container {
-  background: rgba(255, 255, 255, 0.27);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
+  background: rgb(255 255 255 / 8%);
+  border-radius: 23px;
+  box-shadow: 1px 12px 41px rgb(0 0 0 / 16%);
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1.5rem 2rem;
@@ -318,14 +319,9 @@ html {
   }
 }
 
-/* Sections */
-/* section {
-  padding: 80px 0;
-} */
-
 .section-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .section-title {
@@ -336,6 +332,7 @@ html {
 
 .section-subtitle {
   font-size: 1.2rem;
+  font-style: italic;
   color: var(--text-light);
 }
 
@@ -369,10 +366,10 @@ html {
   color: var(--text-light);
 }
 
-.about-text h3 {
+.about-text h1 {
   color: var(--primary-color);
   margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 2.5rem;
 }
 
 .about-text p {
@@ -568,6 +565,9 @@ html {
   background: var(--white);
   /* padding: 80px 0; */
 }
+#gallery {
+  margin-top: -150px;
+}
 
 .gallery-title {
   font-size: 3.5rem;
@@ -575,7 +575,6 @@ html {
   text-transform: uppercase;
   letter-spacing: -0.02em;
   text-align: center;
-  margin-bottom: 20px;
   background: linear-gradient(to bottom, rgba(196, 30, 58, 0.8) 30%, rgba(245, 158, 11, 0.6) 76%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -589,7 +588,7 @@ html {
   height: 450px;
   position: relative;
   perspective: 1000px;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
 }
 
 .carousel-track {
@@ -638,7 +637,7 @@ html {
 }
 
 .card.center:hover {
-  transform: scale(1.15) translateZ(0);
+  transform: scale(1.4) translateZ(0);
 }
 
 .card.left-2 {
@@ -688,17 +687,14 @@ html {
 
 .gallery-info {
   text-align: center;
-  margin-bottom: 40px;
-  margin-top: 20px;
   transition: all 0.5s ease-out;
   min-height: 80px;
 }
 
 .gallery-item-name {
   color: var(--primary-color);
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 10px;
   position: relative;
   display: inline-block;
   transition: opacity 0.3s ease;
@@ -708,7 +704,7 @@ html {
 .gallery-item-name::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 50%;
   width: 80px;
   height: 2px;
   background: linear-gradient(90deg, var(--primary-color), var(--gold-color));
@@ -724,7 +720,7 @@ html {
 
 .gallery-item-description {
   color: var(--text-light);
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 500;
   opacity: 0.8;
   text-transform: capitalize;
@@ -736,13 +732,14 @@ html {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
 }
 
 .dots {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .dot {
