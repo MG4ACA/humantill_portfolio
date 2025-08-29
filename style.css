@@ -1,5 +1,5 @@
 /* Universal Responsive Improvements */
-html, body {
+/* html, body {
   width: 100%;
   min-width: 0;
   overflow-x: hidden;
@@ -30,7 +30,8 @@ section, .container, .container-our-impact {
 }
 
 @media (max-width: 900px) {
-  .container, .container-our-impact {
+  .container,
+  .container-our-impact {
     margin: 1rem;
     padding: 0 8px;
   }
@@ -50,8 +51,8 @@ section, .container, .container-our-impact {
     top: 60px;
     left: 0;
     width: 100vw;
-    background: rgba(255,255,255,0.98);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     display: none;
   }
   .nav-menu.active {
@@ -63,7 +64,11 @@ section, .container, .container-our-impact {
   .nav-logo {
     max-width: 120px;
   }
-  .hero-content, .about-content, .highlights .container, .gallery-section, .footer-content {
+  .hero-content,
+  .about-content,
+  .highlights .container,
+  .gallery-section,
+  .footer-content {
     flex-direction: column !important;
     gap: 1.2rem;
     padding: 0.5rem;
@@ -100,17 +105,22 @@ section, .container, .container-our-impact {
 }
 
 @media (max-width: 480px) {
-  .container, .container-our-impact {
+  .container,
+  .container-our-impact {
     margin: 0.2rem;
     padding: 0 2px;
   }
-  .section-title, .hero-title {
+  .section-title,
+  .hero-title {
     font-size: 1.3rem;
   }
-  .section-subtitle, .hero-subtitle {
+  .section-subtitle,
+  .hero-subtitle {
     font-size: 1rem;
   }
-  .btn, .btn-primary, .btn-secondary {
+  .btn,
+  .btn-primary,
+  .btn-secondary {
     width: 100%;
     font-size: 1rem;
     padding: 0.7rem 0.2rem;
@@ -127,6 +137,7 @@ section, .container, .container-our-impact {
     padding: 0.7rem 0.2rem;
   }
 }
+*/
 /* Impact Quote Styling */
 .impact-quote {
   display: block;
