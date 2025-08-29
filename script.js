@@ -95,27 +95,34 @@ const animateCounters = () => {
   const counters = document.querySelectorAll(".stat-number");
 
   counters.forEach((counter) => {
-    const target = parseInt(counter.textContent);
+    // Get the original value as string
+    const original = counter.textContent.trim();
+    // Remove commas for parsing, preserve leading zeros
+    const target = parseInt(original.replace(/,/g, ""), 10);
+    const hasComma = original.includes(",");
+    const leadingZeros = original.match(/^0+/);
     const increment = target / 100;
     let current = 0;
+
+    const formatNumber = (num) => {
+      let str = Math.floor(num).toString();
+      if (leadingZeros) {
+        str = leadingZeros[0] + str;
+      }
+      if (hasComma) {
+        // Add commas for thousands
+        str = str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+      return str;
+    };
 
     const updateCounter = () => {
       if (current < target) {
         current += increment;
-        if (target > 100) {
-          counter.textContent = Math.ceil(current) + "+";
-        } else {
-          counter.textContent = Math.ceil(current);
-        }
+        counter.textContent = formatNumber(current);
         setTimeout(updateCounter, 20);
       } else {
-        if (target === 100) {
-          counter.textContent = "100+";
-        } else if (target === 5) {
-          counter.textContent = "5";
-        } else {
-          counter.textContent = "1M+";
-        }
+        counter.textContent = original;
       }
     };
 
