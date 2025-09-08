@@ -1,0 +1,14 @@
+/* Minimal placeholder styles preserved from original site later */
+:root {
+  --primary-color: #c41e3a;
+  --secondary-color: #ffb4b4;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: #fff;
+  color: #111;
+}
+a {
+  color: inherit;
+}
