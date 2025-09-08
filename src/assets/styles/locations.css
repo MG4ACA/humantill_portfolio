@@ -1,0 +1,44 @@
+/* Basic layout for Locations / Map section */
+.locations {
+  padding: 4rem 0;
+}
+
+.locations .map-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.locations .sidebar {
+  flex: 0 0 320px;
+}
+
+.locations .map-section {
+  flex: 1 1 auto;
+  min-height: 420px;
+}
+
+.map-visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.event-details {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .locations .map-container {
+    flex-direction: column;
+  }
+  .locations .sidebar {
+    order: 2;
+  }
+  .locations .map-section {
+    order: 1;
+  }
+}

@@ -1,17 +1,26 @@
+import { useRef, useState } from 'react';
 import '../assets/styles/hero.css';
 
 export default function Hero() {
+  const scrollIndicatorRef = useRef(null);
+  const [titleText, setTitleText] = useState('');
+
   return (
     <section id="home" className="hero">
       <div className="hero-content">
         <div className="hero-text">
           <div className="hero-rest-container">
-            <h1 className="hero-title">HumaniTill</h1>
-            <h2 className="hero-subtitle">Restoring Mobility. Restoring Dignity.</h2>
+            <div className="humani-till-logo-container">
+              <img src="/images/logos/humantill-logo.png" alt="HumaniTill logo" />
+            </div>
+            <h2 className="hero-subtitle py-[1rem]">
+              <strong>Restoring Mobility. Restoring Dignity.</strong>
+            </h2>
+            <h2 className="py-[0.5rem]">
+              <strong> A STEP TOWARDS A LIFE REGAINED .</strong>
+            </h2>
             <p className="hero-description">
-              A STEP TOWARDS A LIFE REGAINED
-              <br />
-              HumaniTill is more than a donation box, it’s a beacon of hope.
+              HumaniTill is more than a donation box, it's a beacon of hope.
             </p>
             <p style={{ marginBottom: 10 }}>
               Designed as a life-sized, transparent human figure, it stands as a powerful reminder
@@ -25,16 +34,16 @@ export default function Hero() {
             </p>
           </div>
           <div className="hero-buttons">
-            <a href="#about" className="btn btn-primary">
-              Learn More
-            </a>
-            <a href="#cta" className="btn btn-secondary">
+            <a href="#cta" className="btn btn-primary mr-[1rem] pulse-hero">
               Join the Mission
+            </a>
+            <a href="#about" className="btn btn-secondary">
+              Learn More
             </a>
           </div>
         </div>
       </div>
-      <div className="scroll-indicator">
+      <div ref={scrollIndicatorRef} className="scroll-indicator">
         <span>Scroll to explore</span>
         <div className="scroll-arrow" />
       </div>
