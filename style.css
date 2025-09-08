@@ -30,96 +30,7 @@ section, .container, .container-our-impact {
 }
 
 @media (max-width: 900px) {
-  .container,
-  .container-our-impact {
-    margin: 1rem;
-    padding: 0 8px;
-  }
-  .about-meththa-content {
-    width: 90vw;
-    padding: 1.2rem 0.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem 0.5rem;
-  }
-  .nav-menu {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100vw;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-    display: none;
-  }
-  .nav-menu.active {
-    display: flex;
-  }
-  .hamburger {
-    display: block;
-  }
-  .nav-logo {
-    max-width: 120px;
-  }
-  .hero-content,
-  .about-content,
-  .highlights .container,
-  .gallery-section,
-  .footer-content {
-    flex-direction: column !important;
-    gap: 1.2rem;
-    padding: 0.5rem;
-  }
-  .about-meththa-content {
-    width: 98vw;
-    padding: 1rem 0.2rem;
-  }
-  .timeline {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .timeline-item {
-    flex-direction: column !important;
-    margin-bottom: 1.2rem;
-  }
-  .timeline-content {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 100%;
-  }
-  .about-stats {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .stat-item {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  .our-impact-description {
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container,
-  .container-our-impact {
-    margin: 0.2rem;
-    padding: 0 2px;
-  }
-  .section-title,
-  .hero-title {
-    font-size: 1.3rem;
-  }
-  .section-subtitle,
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  .btn,
-  .btn-primary,
+  /* Hero Section */
   .btn-secondary {
     width: 100%;
     font-size: 1rem;
@@ -177,7 +88,7 @@ section, .container, .container-our-impact {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: var(--text-light);
   overflow-x: hidden;
@@ -270,7 +181,7 @@ html {
 }
 
 .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -5px;
   left: 50%;
@@ -312,189 +223,6 @@ html {
 
 .hamburger.active .bar:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Hero Section */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(245, 245, 244, 0.9) 100%),
-    url("images/humanitill-morning.jpg") center top/cover;
-  position: relative;
-  padding: 200px 20px 80px;
-}
-
-.hero-content {
-  width: 56vw;
-  display: flex;
-  gap: 4rem;
-  align-items: center;
-  text-align: justify;
-  justify-content: flex-start;
-}
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  line-height: 1.1;
-}
-
-.hero-rest-container {
-  background: rgb(255 255 255 / 8%);
-  border-radius: 23px;
-  box-shadow: 1px 12px 41px rgb(0 0 0 / 1%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1.5rem 2rem;
-  margin-bottom: 2rem;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-}
-
-.hero-description {
-  font-size: 1rem;
-  color: #494848;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.btn {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  display: inline-block;
-}
-
-.btn-primary {
-  background: var(--primary-color);
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-}
-
-.btn-secondary:hover {
-  background: var(--primary-color);
-  color: var(--white);
-}
-
-.btn-large {
-  padding: 1.2rem 2.5rem;
-  font-size: 1.1rem;
-}
-
-/* Hero Illustration */
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.till-illustration {
-  position: relative;
-  width: 200px;
-  height: 300px;
-}
-
-.till-body {
-  width: 120px;
-  height: 200px;
-  background: linear-gradient(145deg, rgba(196, 30, 58, 0.2), rgba(230, 57, 74, 0.3));
-  border: 3px solid var(--primary-color);
-  border-radius: 60px 60px 20px 20px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.till-body::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  background: rgba(196, 30, 58, 0.3);
-  border-radius: 50%;
-}
-
-.till-body::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 40px;
-  background: rgba(196, 30, 58, 0.2);
-  border-radius: 50%;
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-.our-impact-description {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  text-align: center;
-  margin: 2rem 0 4rem 0;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-dark);
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--text-light);
 }
 
 /* About Section */
@@ -581,7 +309,7 @@ html {
 }
 
 .stat-item::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -656,7 +384,7 @@ html {
 }
 
 .timeline::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -744,7 +472,7 @@ html {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-family: "Inter", "Arial Black", Arial, sans-serif;
+  font-family: 'Inter', 'Arial Black', Arial, sans-serif;
 }
 
 .carousel-container {
@@ -867,7 +595,7 @@ html {
 
 .gallery-item-name::before,
 .gallery-item-name::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   width: 80px;
@@ -991,11 +719,11 @@ html {
 }
 
 /* Improve button accessibility */
-.nav-arrow[tabindex="0"] {
+.nav-arrow[tabindex='0'] {
   cursor: pointer;
 }
 
-.dot[tabindex="0"] {
+.dot[tabindex='0'] {
   cursor: pointer;
 }
 
@@ -1211,39 +939,6 @@ html {
     display: flex;
   }
 
-  .hero {
-    padding: 120px 20px 60px;
-    min-height: 90vh;
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.8rem;
-  }
-
-  .hero-description {
-    font-size: 1.1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .btn {
-    width: 250px;
-  }
-
   .about-content {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1361,7 +1056,7 @@ html {
 }
 
 .about-meththa-foundation {
-  background: url("images/maliban-jeewithaloka.svg") center center/cover no-repeat;
+  background: url('images/maliban-jeewithaloka.svg') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
