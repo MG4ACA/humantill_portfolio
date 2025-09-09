@@ -1,10 +1,52 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../assets/styles/navbar.css';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const toggle = () => setOpen((v) => !v);
+
+  const [active, setActive] = useState('home');
+
+  useEffect(() => {
+    const ids = ['home', 'about', 'highlights', 'gallery', 'contact'];
+    const observers = [];
+
+    const onIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(onIntersect, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    });
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        observer.observe(el);
+        observers.push({ id, el });
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+      observers.length = 0;
+    };
+  }, []);
+
+  function handleNavClick(e, id) {
+    e.preventDefault();
+    setOpen(false);
+    setActive(id);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return (
     <nav className="navbar">
@@ -21,32 +63,52 @@ export default function Navbar() {
 
         <ul className={`nav-menu ${open ? 'active' : ''}`}>
           <li>
-            <a href="#home" className="nav-link" onClick={() => setOpen(false)}>
+            <a
+              href="#home"
+              className={`nav-link ${active === 'home' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'home')}
+            >
               Home
             </a>
           </li>
           <li>
-            <a href="#about" className="nav-link" onClick={() => setOpen(false)}>
+            <a
+              href="#about"
+              className={`nav-link ${active === 'about' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'about')}
+            >
               About
             </a>
           </li>
           <li>
-            <a href="#highlights" className="nav-link" onClick={() => setOpen(false)}>
+            <a
+              href="#highlights"
+              className={`nav-link ${active === 'highlights' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'highlights')}
+            >
               Project
             </a>
           </li>
-          <li>
-            <a href="#locations" className="nav-link" onClick={() => setOpen(false)}>
+          {/* <li>
+            <a href="#locations" className={`nav-link ${active === 'locations' ? 'active' : ''}`} onClick={(e) => handleNavClick(e, 'locations')}>
               Locations
             </a>
-          </li>
+          </li> */}
           <li>
-            <a href="#gallery" className="nav-link" onClick={() => setOpen(false)}>
+            <a
+              href="#gallery"
+              className={`nav-link ${active === 'gallery' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'gallery')}
+            >
               Gallery
             </a>
           </li>
           <li>
-            <a href="#contact" className="nav-link" onClick={() => setOpen(false)}>
+            <a
+              href="#contact"
+              className={`nav-link ${active === 'contact' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'contact')}
+            >
               Contact
             </a>
           </li>

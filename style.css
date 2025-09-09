@@ -433,34 +433,4 @@ section, .container, .container-our-impact {
   transform: translateX(0);
 }
 
-.about-meththa-foundation {
-  background: url('images/maliban-jeewithaloka.svg') center center/cover no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  margin: 0 0 4rem 0;
-}
-
-.about-meththa-content {
-  width: 45vw;
-  margin-left: auto;
-  margin-right: 0;
-  /* background: rgba(255, 255, 255, 0.85); */
-  border-radius: 18px;
-  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); */
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  backdrop-filter: blur(4px);
-  text-align: justify;
-}
-
-.section-title-about-meththa-foundation {
-  font-size: 2rem;
-}
-
-.about-meththa-content-inner {
-  margin-bottom: 2rem;
-}
+/* about-meththa-foundation moved to src/assets/styles/about.css to avoid duplicate declarations */

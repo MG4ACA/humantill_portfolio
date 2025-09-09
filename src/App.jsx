@@ -5,7 +5,6 @@ import Footer from './pages/Footer';
 import Gallery from './pages/Gallery';
 import Hero from './pages/Hero';
 import Highlights from './pages/Highlights';
-import Locations from './pages/Locations';
 
 export default function App() {
   return (
@@ -15,7 +14,7 @@ export default function App() {
         <Hero />
         <About />
         <Highlights />
-        <Locations />
+        {/* <Locations /> */}
         <Gallery />
         <Cta />
         <Footer />

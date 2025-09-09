@@ -18,12 +18,6 @@
   min-height: 420px;
 }
 
-.map-visual svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .event-details {
   background: rgba(255, 255, 255, 0.9);
   padding: 1rem;
@@ -37,6 +31,7 @@
   }
   .locations .sidebar {
     order: 2;
+    flex: 0 0 auto;
   }
   .locations .map-section {
     order: 1;

@@ -3,12 +3,18 @@
 }
 
 .timeline {
-  margin: 2rem 4rem;
+  margin: 2rem 0;
   position: relative;
 }
 
 .container-our-impact {
-  margin: 2rem 6rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.timeline-content h3 {
+  font-weight: 600;
 }
 
 .timeline::before {

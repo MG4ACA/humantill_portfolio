@@ -107,6 +107,13 @@ export default function About() {
       {/* Meththa foundation section copied from original site */}
       <section className="about-meththa-foundation">
         <div className="about-meththa-content">
+          <div>
+            <img
+              src="/images/logos/meththa-logo.png"
+              alt="meththa-logo"
+              className="w-[16vw] pb-[2rem]"
+            />
+          </div>
           <div className="about-meththa-content-inner">
             <h2 className="section-title-about-meththa-foundation">ABOUT MALIBAN JEEWITHALOKA</h2>
             <p>
@@ -116,20 +123,16 @@ export default function About() {
               sustained impact across the country.
             </p>
           </div>
-          <div>
-            <div className="section-header">
-              <h2 className="section-title-about-meththa-foundation">ABOUT METHTHA FOUNDATION</h2>
-            </div>
-            <div>
-              <p>
-                The Meththa Foundation is a non-profit organization devoted to providing prosthetic
-                limbs to those who cannot afford them. With a commitment to innovation, quality, and
-                compassionate service, Meththa has transformed thousands of lives by restoring
-                mobility and independence. As a trusted partner of HumaniTill, Meththa ensures that
-                every donation translates into high-quality prosthetics and ongoing care for
-                beneficiaries across Sri Lanka.
-              </p>
-            </div>
+          <div className="about-meththa-content-inner">
+            <h2 className="section-title-about-meththa-foundation">ABOUT METHTHA FOUNDATION</h2>
+            <p>
+              The Meththa Foundation is a non-profit organization devoted to providing prosthetic
+              limbs to those who cannot afford them. With a commitment to innovation, quality, and
+              compassionate service, Meththa has transformed thousands of lives by restoring
+              mobility and independence. As a trusted partner of HumaniTill, Meththa ensures that
+              every donation translates into high-quality prosthetics and ongoing care for
+              beneficiaries across Sri Lanka.
+            </p>
           </div>
         </div>
       </section>

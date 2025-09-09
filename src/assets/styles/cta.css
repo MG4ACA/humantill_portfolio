@@ -74,3 +74,22 @@
 .pulse {
   animation: pulse 1.8s ease-in-out infinite;
 }
+
+/* Keep CTA content aligned with site container */
+.cta .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+@media (max-width: 480px) {
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}

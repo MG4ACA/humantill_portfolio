@@ -3,34 +3,22 @@ import '../assets/styles/gallery.css';
 
 const galleryItems = [
   {
-    name: 'Official HumaniTill Launch',
-    description: 'The transparent human figure at Anuradhapura sacred sites',
-    image: '/images/humanitill-official.jpg',
+    image: '/images/carosal-01.jpg',
   },
   {
-    name: 'HumaniTill Initiative',
-    description: "Maliban's CSR project restoring hope and mobility",
-    image: '/images/humanitill-morning.jpg',
+    image: '/images/carosal-02.JPG',
   },
   {
-    name: 'Community Response',
-    description: 'Overwhelming support from devotees and visitors',
-    image: '/images/humanitill-lbn.jpg',
+    image: '/images/carosal-03.JPG',
   },
   {
-    name: 'Jeewithaloka Programme',
-    description: "Maliban's commitment to inspiring goodness",
-    image: '/images/temple-sri-lanka.jpg',
+    image: '/images/carosal-04.JPG',
   },
   {
-    name: 'Meththa Foundation Partnership',
-    description: 'Three decades of humanitarian service',
-    image: '/images/helping-hands.jpg',
+    image: '/images/carosal-05.jpg',
   },
   {
-    name: 'HumaniTill Vision',
-    description: 'Restoring hope and dignity to lives across Sri Lanka',
-    image: '/images/main-image.png',
+    image: '/images/carosal-06.jpg',
   },
 ];
 
@@ -217,21 +205,6 @@ export default function Gallery() {
           >
             ›
           </button>
-        </div>
-
-        <div className="gallery-info">
-          <h3
-            className="gallery-item-name"
-            style={{ transition: 'opacity 0.3s ease', opacity: infoOpacity }}
-          >
-            {galleryItems[currentIndex].name}
-          </h3>
-          <p
-            className="gallery-item-description"
-            style={{ transition: 'opacity 0.3s ease', opacity: infoOpacity }}
-          >
-            {galleryItems[currentIndex].description}
-          </p>
         </div>
       </div>
     </section>

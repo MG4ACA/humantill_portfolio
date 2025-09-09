@@ -2,12 +2,13 @@
   background: var(--white);
 }
 
+/* keep gallery below preceding sections; remove large negative offset copied from legacy file */
 #gallery {
-  margin-top: -150px;
+  margin-top: 0;
 }
 
 .gallery-title {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -21,11 +22,26 @@
 
 .carousel-container {
   width: 100%;
-  max-width: 1200px;
-  height: 450px;
+  max-width: 65vw;
+  height: 80vh;
   position: relative;
   perspective: 1000px;
   margin: 0 auto 20px;
+}
+
+/* mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 320px;
+  }
+  .card {
+    width: 220px;
+    height: 300px;
+  }
+  .card.left-2,
+  .card.right-2 {
+    transform: translateX(300px) scale(0.75) translateZ(-250px);
+  }
 }
 
 .carousel-track {
@@ -41,8 +57,7 @@
 
 .card {
   position: absolute;
-  width: 280px;
-  height: 380px;
+  width: 50vw;
   background: white;
   border-radius: 20px;
   overflow: hidden;
@@ -110,55 +125,6 @@
   opacity: 0;
   pointer-events: none;
 }
-
-.gallery-info {
-  text-align: center;
-  transition: all 0.5s ease-out;
-  min-height: 80px;
-}
-
-.gallery-item-name {
-  color: var(--primary-color);
-  font-size: 1.6rem;
-  font-weight: 700;
-  position: relative;
-  display: inline-block;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-item-name::before,
-.gallery-item-name::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary-color), var(--gold-color));
-}
-.gallery-item-name::before {
-  left: -100px;
-}
-.gallery-item-name::after {
-  right: -100px;
-}
-
-.gallery-item-description {
-  color: var(--text-light);
-  font-size: 1rem;
-  font-weight: 500;
-  opacity: 0.8;
-  text-transform: capitalize;
-  letter-spacing: 0.1em;
-  padding: 10px 0;
-  margin-top: -5px;
-  position: relative;
-  transition: opacity 0.3s ease;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-}
-
 .dots {
   display: flex;
   justify-content: center;
@@ -203,7 +169,8 @@
   font-size: 1.8rem;
   border: none;
   outline: none;
-  padding-bottom: 2px;
+  padding: 0;
+  line-height: 1;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
 }
@@ -217,11 +184,19 @@
 }
 .nav-arrow.left {
   left: 20px;
-  padding-right: 3px;
 }
 .nav-arrow.right {
   right: 20px;
-  padding-left: 3px;
+}
+
+/* make any inline icons or svgs inside the button a consistent size and block-level so flex centers them */
+.nav-arrow > svg,
+.nav-arrow > i,
+.nav-arrow > img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  line-height: 1;
 }
 
 .dot:focus {
