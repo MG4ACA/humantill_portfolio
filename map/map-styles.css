@@ -8,8 +8,6 @@
 }
 
 .map-visual svg {
-  max-width: 100%;
-  height: auto;
   transform: scale(0.8);
   transform-origin: center top;
 }
