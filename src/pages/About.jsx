@@ -77,20 +77,19 @@ export default function About() {
                 tall with confidence. It's not just about prosthetics; it's about giving back the
                 gift of mobility.
               </p>
-
-              <div className="quote-section">
-                <blockquote>
-                  To restore mobility, dignity, and independence to those who have lost their limbs,
-                  completely free of charge.
-                </blockquote>
-                <cite>OUR MISSION</cite>
-              </div>
               <div className="quote-section">
                 <blockquote>
                   A Sri Lanka where every step is possible, every dream is within reach, and every
                   person has the freedom to move forward.
                 </blockquote>
                 <cite>OUR VISION</cite>
+              </div>
+              <div className="quote-section">
+                <blockquote>
+                  To restore mobility, dignity, and independence to those who have lost their limbs,
+                  completely free of charge.
+                </blockquote>
+                <cite>OUR MISSION</cite>
               </div>
             </div>
             <div className="about-image">
