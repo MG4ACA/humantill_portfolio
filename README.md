@@ -7,6 +7,7 @@
 HumaniTill is an innovative Corporate Social Responsibility (CSR) initiative by **Maliban Biscuit Manufactories** as part of the Jeewithaloka program. This project features a life-sized, human-shaped transparent donation box that serves as a powerful symbol of missing limbs and the hope for restoration.
 
 ### Mission
+
 To provide free prosthetic limbs to individuals in need across Sri Lanka, restoring their mobility, independence, and dignity.
 
 ## 🎯 Project Overview
@@ -46,36 +47,42 @@ This website showcases the HumaniTill initiative with:
 
 ```
 human_till/
-├── index.html          # Main website file
-├── style.css          # Stylesheet
-├── script.js          # JavaScript functionality
-├── temp.html          # Additional HTML file
-├── images/            # Image assets
-│   ├── main-logo.png
-│   ├── main-image.png
-│   ├── maliban-logo.png
-│   ├── humanitill-official.jpg
-│   ├── helping-hands.jpg
-│   ├── temple-sri-lanka.jpg
+├── index.html          # Vite entry (loads `src/main.jsx`)
+├── package.json        # Node scripts and dependencies
+├── public/             # Static assets served at / (images and logos)
+├── src/                # React source (components, pages, styles)
+│   ├── main.jsx        # App entry
+│   ├── App.jsx
 │   └── ...
-└── README.md          # Project documentation
+├── archive/            # Archived legacy site files (moved for cleanup)
+└── README.md           # Project documentation (this file)
 ```
 
 ## 🚀 Getting Started
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/MG4ACA/humantill_portfolio-.git
    ```
 
 2. **Navigate to the project directory**:
+
    ```bash
    cd humantill_portfolio-
    ```
 
-3. **Open in browser**:
-   - Simply open `index.html` in your web browser
-   - Or use a local server for development
+3. **Open in browser / Develop**:
+
+   - Use the Vite dev server for development:
+   - Use the Vite dev server for development:
+
+   ```powershell
+   npm install
+   npm run dev
+   ```
+
+   - The app entrypoint is `src/main.jsx`; static images live in `public/images`.
 
 ## 💡 Key Features
 
@@ -88,7 +95,7 @@ human_till/
 ## 🌟 Impact
 
 > "At Maliban, inspiring goodness is a way of life. With the HumaniTill, we aim to give people not only mobility, but a second chance at life."
-> 
+>
 > — Positha Perera, Group Head of Corporate Communications, Maliban Group of Companies
 
 ## 🤝 Partnership
