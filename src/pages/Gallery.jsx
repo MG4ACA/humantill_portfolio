@@ -6,13 +6,13 @@ const galleryItems = [
     image: '/images/carosal-01.jpg',
   },
   {
-    image: '/images/carosal-02.JPG',
+    image: '/images/carosal-02.jpg',
   },
   {
-    image: '/images/carosal-03.JPG',
+    image: '/images/carosal-03.jpg',
   },
   {
-    image: '/images/carosal-04.JPG',
+    image: '/images/carosal-04.jpg',
   },
   {
     image: '/images/carosal-05.jpg',
