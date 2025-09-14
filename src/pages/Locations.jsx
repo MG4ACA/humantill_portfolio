@@ -1,21 +1,99 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import '../assets/styles/locations.css';
+import events from '../data/events';
 
 export default function Locations() {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(events && events.length ? events[0] : null);
+  const [hovered, setHovered] = useState(null);
+  const [markerPositions, setMarkerPositions] = useState({});
+  const svgRef = useRef(null);
+  const defaultEvent = useMemo(() => {
+    // prefer Colombo by district id, fallback to first event
+    return (
+      events.find((e) => e.districtId === 'LK-11') || (events && events.length ? events[0] : null)
+    );
+  }, []);
+
+  // group events by district id for sidebar rendering
+  const eventsByDistrict = useMemo(() => {
+    const m = new Map();
+    for (const ev of events) {
+      if (!m.has(ev.districtId)) m.set(ev.districtId, []);
+      m.get(ev.districtId).push(ev);
+    }
+    return m;
+  }, []);
 
   function handleSvgClick(e) {
     // find nearest <path> ancestor (or target itself)
-    let node = e.target;
-    while (node && node.nodeName && node.nodeName.toLowerCase() !== 'path') {
-      node = node.parentNode;
-    }
-    if (!node || node.nodeName.toLowerCase() !== 'path') return;
-    const id = node.id || null;
-    const title =
-      node.getAttribute('title') || node.getAttribute('data-title') || 'Selected Region';
-    setSelected({ id, title });
+    // let node = e.target;
+    // while (node && node.nodeName && node.nodeName.toLowerCase() !== 'path') {
+    //   node = node.parentNode;
+    // }
+    // if (!node || node.nodeName.toLowerCase() !== 'path') return;
+    // const id = node.id || null;
+    // const title =
+    //   node.getAttribute('title') || node.getAttribute('data-title') || 'Selected Region';
+    // setSelected({ id, title });
   }
+
+  // keep the SVG path highlight in sync with `selected`
+  useEffect(() => {
+    if (!selected) return;
+
+    // selected may be an event object with `districtId` or an object with `id`
+    const targetId = selected.districtId || selected.id || null;
+    if (!targetId) return;
+
+    const el = document.getElementById(targetId);
+    if (!el) return;
+
+    // add highlight class
+    el.classList.add('district--highlight');
+
+    // cleanup function to remove highlight when selected changes/unmounts
+    return () => {
+      try {
+        el.classList.remove('district--highlight');
+      } catch (err) {
+        // element may have been removed from DOM; ignore
+      }
+    };
+  }, [selected]);
+
+  // compute marker positions (cx, cy) from district path bounding boxes
+  useEffect(() => {
+    function computePositions() {
+      if (!svgRef.current) return;
+      const next = {};
+      for (const ev of events) {
+        const districtId = ev.districtId;
+        if (!districtId) continue;
+        const pathEl = document.getElementById(districtId);
+        if (!pathEl) {
+          console.warn('District path not found for', districtId);
+          continue;
+        }
+        try {
+          const bb = pathEl.getBBox();
+          // center of bounding box
+          const cx = bb.x + bb.width / 2;
+          const cy = bb.y + bb.height / 2;
+          next[ev.id] = { cx, cy };
+        } catch (err) {
+          console.warn('Could not compute bbox for', districtId, err);
+        }
+      }
+      setMarkerPositions(next);
+    }
+
+    // initial compute after mount
+    computePositions();
+
+    // recompute on window resize (SVG may scale)
+    window.addEventListener('resize', computePositions);
+    return () => window.removeEventListener('resize', computePositions);
+  }, []);
 
   return (
     <section id="locations" className="locations">
@@ -27,15 +105,51 @@ export default function Locations() {
         <div className="map-container">
           {/* Sidebar Section */}
           <div className="sidebar">
-            <div className="event-details" id="event-details">
-              {selected ? (
-                <>
-                  <h3>{selected.title}</h3>
-                  {selected.id && <p>ID: {selected.id}</p>}
-                </>
-              ) : (
-                <h3>Select an event marker to view details</h3>
-              )}
+            <div
+              className={`event-details ${selected ? 'event-details--accent' : ''}`}
+              id="event-details"
+            >
+              {/* show the last-hovered details; if none hovered yet, show Colombo as default */}
+              {(() => {
+                const active = hovered || defaultEvent;
+                if (!active) return <h3>Hover over a marker to view details</h3>;
+                return (
+                  <div
+                    key={active.id || 'default'}
+                    className="sidebar-content sidebar-content--anim"
+                  >
+                    {active.title && active.districtTitle && (
+                      <p className="event-subtitle">{active.title}</p>
+                    )}
+                    {active.address && <p className="event-address">Location: {active.address}</p>}
+                    {active.status && (
+                      <p className="status">
+                        Status : <span className="status-badge">{active.status}</span>
+                      </p>
+                    )}
+                    {active.date && <p className="date">Date : {active.date}</p>}
+                    {active.description && (
+                      <p className="event-description">{active.description}</p>
+                    )}
+                  </div>
+                );
+              })()}
+            </div>
+
+            {/* compact legend showing marker color meaning */}
+            <div className="legend" aria-hidden={false}>
+              <div className="legend-item">
+                <span className="swatch active" />
+                <span>Ongoing</span>
+              </div>
+              <div className="legend-item">
+                <span className="swatch upcoming" />
+                <span>Upcoming</span>
+              </div>
+              <div className="legend-item">
+                <span className="swatch concluded" />
+                <span>Completed </span>
+              </div>
             </div>
           </div>
 
@@ -46,15 +160,25 @@ export default function Locations() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 449.68774 792.54926"
-                width="25vw"
-                height="auto"
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 aria-label="Map of Sri Lanka"
+                ref={svgRef}
                 onClick={handleSvgClick}
-                mapsvg:geoViewBox="79.649879 9.836125 81.878908 5.918161"
-                style={{ cursor: 'pointer' }}
+                className="map-svg"
               >
+                <defs>
+                  <symbol id="marker-pin" viewBox="0 0 24 34" overflow="visible">
+                    <g fill="none" fillRule="evenodd">
+                      <path
+                        d="M12 0C7.03 0 3.2 3.83 3.2 8.8c0 5.84 7.77 15.9 8.23 16.44.3.36.82.36 1.13 0 .46-.54 8.23-10.6 8.23-16.44C20.8 3.83 16.97 0 12 0z"
+                        className="marker-fill"
+                      />
+                      <circle cx="12" cy="8.8" r="3.6" className="marker-hole" />
+                      <circle cx="12" cy="8.8" r="1.6" className="marker-core" />
+                    </g>
+                  </symbol>
+                </defs>
                 <path
                   d="m 44.487125,578.90075 2.6,0.07 -0.85,3.88 1.17,0.77 3.07,-0.34 -0.63,0.87 0.73,0.82 2.1,-0.67 1.16,0.91 1.25,-1.28 0.88,0.78 1.61,-0.27 1.98,2.33 2.36,-0.89 6.19,1.5 1.55,-1.65 1.46,0.39 2.63,-0.87 -0.11,1.34 1.33,2.96 1.97,0.25 6.04,3.27 0.97,-1.17 1.99,1.06 0.69,-0.62 3.04,-0.14 0.12,-5.37 0.96,-2.75 1.43,-0.5 0.75,-1.82 2.38,-0.53 0.45,-1.67 8.550005,0.81 0.8,-1.88 1.86,0.31 0,0 1.03,0.71 1.08,-0.74 2.05,0.46 1.52,-0.61 2.17,1.17 -0.08,3.22 1.05,1.45 0.04,1.6 -0.74,1.2 -2.38,-0.32 0.42,4.01 0,0 -2.13,1.87 0.27,0.95 -0.97,-0.12 -1.07,0.97 -0.02,1.35 -1.42,1.26 -0.44,3.8 -0.89,1.71 2.61,0.62 0.96,1.06 1.51,3.83 0.07,2.91 -0.84,0.76 -3.79,0.02 0,0 -1.03,-1.15 -2.07,0.88 -1.09,-1.63 -1.87,-0.39 -6.640005,3.79 1.6,4.81 -0.11,1.72 -0.75,0.63 -2.32,-0.39 -2.14,-4.49 -0.06,-1.79 -1.01,-0.55 -0.33,-1.62 -1.82,-0.55 -1.12,0.43 -1.7,3.89 -1.18,1.12 -2.76,-1.03 -1.23,-1.74 -1.19,-0.4 -1.95,2.98 -2.54,0.8 0.42,0.67 -1.42,1.29 -0.84,-0.07 -0.22,1.4 -1.33,0.1 -3.79,2.47 -1.92,-0.54 -2,0.53 -1.61,-0.9 -0.6,2.46 -0.71,0.42 -4.99,-0.1 -0.59,-0.67 0.37,-1.11 -1.15,-1.34 -4.95,-2.33 -0.5,0.79 1.44,1.81 2.07,7.84 -0.24,1.76 0,0 -4.53,-11.03 -3.36,-10.53 -1.16,-10.42 -3.26,-11.53 0.67,-4.48 0.67,2.91 1.51,-3.25 -0.39,-1.23 2.18,-0.78 1.05,-2.5 z"
                   title="Colombo"
@@ -180,6 +304,39 @@ export default function Locations() {
                   title="Kegalle"
                   id="LK-92"
                 />
+                {/* event markers (rendered from src/data/events.js) */}
+                <g id="event-markers">
+                  {events.map((ev) => {
+                    const pos = markerPositions[ev.id];
+                    if (!pos) return null;
+                    // marker symbol is 24x34. The tip is at the bottom center (y=34).
+                    const iconW = 24;
+                    const iconH = 34;
+                    const x = pos.cx - iconW / 2; // center horizontally
+                    const y = pos.cy - iconH; // align tip to cy
+                    return (
+                      <g
+                        key={ev.id}
+                        className={`marker marker--${ev.type}`}
+                        transform={`translate(${x}, ${y})`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelected(ev);
+                        }}
+                        onMouseEnter={(e) => {
+                          e.stopPropagation();
+                          setHovered(ev);
+                        }}
+                        data-event-id={ev.id}
+                        role="button"
+                        aria-label={ev.title}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <use href="#marker-pin" width={iconW} height={iconH} />
+                      </g>
+                    );
+                  })}
+                </g>
               </svg>
             </div>
           </div>

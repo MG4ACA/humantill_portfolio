@@ -5,17 +5,15 @@
 
 .locations .map-container {
   display: flex;
-  gap: 2rem;
-  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 .locations .sidebar {
-  flex: 0 0 320px;
-}
-
-.locations .map-section {
-  flex: 1 1 auto;
-  min-height: 420px;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .event-details {
@@ -36,4 +34,271 @@
   .locations .map-section {
     order: 1;
   }
+}
+
+/* SVG map helpers */
+.map-visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* Background rect inside the SVG should never capture pointer events */
+.map-visual svg rect.map-bg {
+  pointer-events: none;
+}
+
+/* District-specific fills (red-tinted variants of project primary color) */
+/* Primary: #c41e3a ≈ hsl(353, 68%, 45%) */
+/* Use subtle light variants for district backgrounds */
+#LK-11 {
+  fill: hsla(353, 70%, 92%, 1);
+} /* very light red */
+#LK-12 {
+  fill: hsla(353, 70%, 88%, 1);
+}
+#LK-13 {
+  fill: hsla(353, 70%, 86%, 1);
+}
+#LK-21 {
+  fill: hsla(353, 65%, 84%, 1);
+}
+#LK-22 {
+  fill: hsla(353, 60%, 80%, 1);
+}
+#LK-23 {
+  fill: hsla(353, 62%, 78%, 1);
+}
+#LK-31 {
+  fill: hsla(353, 65%, 76%, 1);
+}
+#LK-32 {
+  fill: hsla(353, 60%, 72%, 1);
+}
+#LK-33 {
+  fill: hsla(353, 62%, 70%, 1);
+}
+#LK-41 {
+  fill: hsla(353, 68%, 68%, 1);
+}
+#LK-42 {
+  fill: hsla(353, 68%, 66%, 1);
+}
+#LK-43 {
+  fill: hsla(353, 66%, 64%, 1);
+}
+#LK-44 {
+  fill: hsla(353, 64%, 62%, 1);
+}
+#LK-45 {
+  fill: hsla(353, 62%, 60%, 1);
+}
+#LK-51 {
+  fill: hsla(353, 60%, 58%, 1);
+}
+#LK-52 {
+  fill: hsla(353, 58%, 56%, 1);
+}
+#LK-53 {
+  fill: hsla(353, 56%, 54%, 1);
+}
+#LK-61 {
+  fill: hsla(353, 60%, 60%, 1);
+}
+#LK-62 {
+  fill: hsla(353, 58%, 58%, 1);
+}
+#LK-71 {
+  fill: hsla(353, 62%, 70%, 1);
+}
+#LK-72 {
+  fill: hsla(353, 60%, 68%, 1);
+}
+#LK-81 {
+  fill: hsla(353, 58%, 66%, 1);
+}
+#LK-82 {
+  fill: hsla(353, 56%, 64%, 1);
+}
+#LK-91 {
+  fill: hsla(353, 54%, 62%, 1);
+}
+#LK-92 {
+  fill: hsla(353, 52%, 60%, 1);
+}
+
+/* A slightly stronger hover to indicate interactivity */
+.map-visual svg path:hover {
+  filter: brightness(0.95) saturate(1.02);
+  cursor: pointer;
+}
+
+/* Ensure markers sit above district fills */
+.map-visual svg .event-marker {
+  z-index: 10;
+}
+
+/* Marker styles by event status (type)
+   - active: currently ongoing
+   - concluded: past events
+   - upcoming: future events */
+.map-visual svg .marker--active {
+  stroke: #7a0f20;
+}
+.map-visual svg .marker--concluded {
+  stroke: #666;
+}
+.map-visual svg .marker--upcoming {
+  stroke: #c41e3a;
+}
+
+/* Simple legend in the sidebar */
+.locations .legend {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.locations .legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.locations .legend .swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.locations .legend .swatch.active {
+  background: #c41e3a;
+}
+.locations .legend .swatch.concluded {
+  background: #999;
+}
+.locations .legend .swatch.upcoming {
+  background: #ffd1d6;
+  border: 1px solid #c41e3a;
+}
+
+.event-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.status-badge {
+  background: #f8d7da; /* very light red */
+  color: #7a0f20; /* dark red text */
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.event-details p {
+  margin: 0.25rem 0 0 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Additional classes to replace inline styles from JSX */
+.map-visual svg.map-svg {
+  cursor: pointer;
+  width: 23vw; /* maintain previous sizing used inline */
+  height: auto;
+}
+
+.event-subtitle {
+  margin: 0;
+  font-weight: 600;
+}
+
+.event-address {
+  margin: 0.25rem 0 0 0;
+  color: #333;
+}
+
+.event-description {
+  margin: 0.5rem 0 0 0;
+  color: #333;
+  white-space: pre-wrap; /* preserve newlines in description text */
+  font-size: 0.95rem;
+}
+
+/* Color variants for the pin image using CSS filters as a lightweight tinting
+   mechanism. These apply when the SVG icon doesn't inherit fill from CSS. */
+.map-visual svg image.marker--active {
+  /* reddish tint */
+  filter: drop-shadow(0 2px 6px rgba(196, 30, 58, 0.12));
+}
+.map-visual svg image.marker--concluded {
+  filter: grayscale(70%) brightness(0.9) contrast(0.95);
+  opacity: 0.9;
+}
+.map-visual svg image.marker--upcoming {
+  filter: saturate(0.7) brightness(1.05) contrast(0.95);
+}
+
+/* Styles for inline marker symbol parts. These use `currentColor` so the
+   symbol can be colored by setting `color` on the parent `.marker` group. */
+.map-visual svg .marker .marker-fill {
+  fill: currentColor;
+}
+.map-visual svg .marker .marker-hole {
+  fill: #fff;
+  opacity: 0.95;
+}
+.map-visual svg .marker .marker-core {
+  fill: rgba(0, 0, 0, 0.12);
+}
+
+/* Marker color variants driven via `color` so CSS can change fill easily */
+.map-visual svg .marker--active {
+  color: #c41e3a; /* primary red */
+}
+.map-visual svg .marker--concluded {
+  color: #999;
+  opacity: 0.95;
+}
+.map-visual svg .marker--upcoming {
+  color: #ffd1d6; /* light pink */
+}
+
+/* Visual highlight for the selected district path */
+.district--highlight {
+  /* stroke: #c41e3a; */
+  stroke-width: 1.6;
+  transition: stroke-width 160ms ease, filter 160ms ease;
+  filter: drop-shadow(0 4px 10px rgba(196, 30, 58, 0.12));
+}
+
+/* Utility: accent style for event-details when used by JS instead of inline styles */
+.event-details--accent {
+  border-left: 4px solid #c41e3a;
+  padding-left: 0.6rem;
+}
+
+/* Sidebar content animation: small upward slide + fade for content changes */
+.sidebar-content {
+  display: block;
+}
+
+@keyframes slideFadeUp {
+  from {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.sidebar-content--anim {
+  animation: slideFadeUp 560ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
 }

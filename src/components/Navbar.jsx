@@ -89,11 +89,15 @@ export default function Navbar() {
               Project
             </a>
           </li>
-          {/* <li>
-            <a href="#locations" className={`nav-link ${active === 'locations' ? 'active' : ''}`} onClick={(e) => handleNavClick(e, 'locations')}>
+          <li>
+            <a
+              href="#locations"
+              className={`nav-link ${active === 'locations' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'locations')}
+            >
               Locations
             </a>
-          </li> */}
+          </li>
           <li>
             <a
               href="#gallery"
