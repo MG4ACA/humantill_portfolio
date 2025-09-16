@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import '../assets/styles/about.css';
+import VideoGrid from '../components/VideoGrid';
 
 export default function About() {
   useEffect(() => {
@@ -66,6 +67,7 @@ export default function About() {
 
   return (
     <>
+      <VideoGrid />
       <section id="about" className="about">
         <div className="container">
           <div className="about-content">
@@ -106,15 +108,17 @@ export default function About() {
       {/* Meththa foundation section copied from original site */}
       <section className="about-meththa-foundation">
         <div className="about-meththa-content">
-          <div>
-            <img
-              src="/images/logos/meththa-logo.png"
-              alt="meththa-logo"
-              className="w-[16vw] pb-[2rem]"
-            />
-          </div>
           <div className="about-meththa-content-inner">
-            <h2 className="section-title-about-meththa-foundation">ABOUT MALIBAN JEEWITHALOKA</h2>
+            <div className="flex pb-[2rem]">
+              <img
+                src="/images/logos/jeewithaloka-sinhala-logo.png"
+                alt="maliban-jeewithaloka-logo"
+                className="w-[9vw] pr-[1rem]"
+              />
+              <h2 className="section-title-about-meththa-foundation font-semibold">
+                ABOUT MALIBAN JEEWITHALOKA
+              </h2>
+            </div>
             <p>
               Jeewithaloka is Maliban's social responsibility initiative focused on community
               development, education, and humanitarian causes. In partnership with HumaniTill,
@@ -123,7 +127,16 @@ export default function About() {
             </p>
           </div>
           <div className="about-meththa-content-inner">
-            <h2 className="section-title-about-meththa-foundation">ABOUT METHTHA FOUNDATION</h2>
+            <div className="flex pb-[2rem] ">
+              <img
+                src="/images/logos/meththa-logo.png"
+                alt="meththa-logo"
+                className="w-[9vw] pr-[1rem]"
+              />
+              <h2 className="section-title-about-meththa-foundation font-semibold">
+                ABOUT METHTHA JEEWITHALOKA
+              </h2>
+            </div>
             <p>
               The Meththa Foundation is a non-profit organization devoted to providing prosthetic
               limbs to those who cannot afford them. With a commitment to innovation, quality, and

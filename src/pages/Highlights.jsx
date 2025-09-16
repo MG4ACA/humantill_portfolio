@@ -89,7 +89,7 @@ export default function Highlights() {
             </div>
             <div className="about-stats">
               <div className="stat-item">
-                <div className="stat-number">02</div>
+                <div className="stat-number">03</div>
                 <div className="stat-label">Locations</div>
               </div>
               <div className="stat-item">

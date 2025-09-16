@@ -1,6 +1,6 @@
 .about {
   background: var(--white);
-  padding: 4rem 0 6rem;
+  /* padding: 4rem 0 6rem; */
 }
 
 .container {
@@ -163,8 +163,10 @@
 }
 
 .section-title-about-meththa-foundation {
-  font-size: 2rem;
+  display: flex;
+  font-size: 1.7rem;
   color: var(--primary-color);
+  align-items: flex-end;
 }
 
 .about-meththa-content-inner {
@@ -184,5 +186,44 @@
 
   .about-stats {
     flex-direction: column;
+  }
+}
+
+/* Videos row used by VideoGrid component */
+.hero-videos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  padding: 0 2rem 3rem;
+}
+
+.videos-row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.videos-row video {
+  width: calc((100% - 3rem) / 4);
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  cursor: pointer;
+}
+
+.videos-row video:hover {
+  transform: scale(1.06);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+  .videos-row video {
+    width: calc((100% - 3rem) / 2);
+    height: 140px;
   }
 }
