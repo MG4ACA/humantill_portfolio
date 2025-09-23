@@ -3,7 +3,11 @@ import '../assets/styles/locations.css';
 import events from '../data/events';
 
 export default function Locations() {
-  const [selected, setSelected] = useState(events && events.length ? events[0] : null);
+  const [selected, setSelected] = useState(() => {
+    return (
+      events.find((e) => e.districtId === 'LK-11') || (events && events.length ? events[0] : null)
+    );
+  });
   const [hovered, setHovered] = useState(null);
   const [markerPositions, setMarkerPositions] = useState({});
   const svgRef = useRef(null);
@@ -137,7 +141,7 @@ export default function Locations() {
             </div>
 
             {/* compact legend showing marker color meaning */}
-            <div className="legend" aria-hidden={false}>
+            {/* <div className="legend" aria-hidden={false}>
               <div className="legend-item">
                 <span className="swatch active" />
                 <span>Ongoing</span>
@@ -150,7 +154,7 @@ export default function Locations() {
                 <span className="swatch concluded" />
                 <span>Completed </span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Map Section */}
@@ -306,7 +310,9 @@ export default function Locations() {
                     return (
                       <g
                         key={ev.id}
-                        className={`marker marker--${ev.type}`}
+                        className={`marker marker--${ev.type} ${
+                          hovered && hovered.id === ev.id ? 'hovered' : ''
+                        } ${selected && selected.id === ev.id ? 'selected' : ''}`}
                         transform={`translate(${x}, ${y})`}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -315,6 +321,14 @@ export default function Locations() {
                         onMouseEnter={(e) => {
                           e.stopPropagation();
                           setHovered(ev);
+                          if (
+                            selected &&
+                            defaultEvent &&
+                            selected.id === defaultEvent.id &&
+                            ev.id !== selected.id
+                          ) {
+                            setSelected(null);
+                          }
                         }}
                         data-event-id={ev.id}
                         role="button"

@@ -144,7 +144,8 @@
    - concluded: past events
    - upcoming: future events */
 .map-visual svg .marker--active {
-  stroke: #7a0f20;
+  fill: #7a0f20;
+  animation: pulse-hover-scale 1.6s infinite ease-out;
 }
 .map-visual svg .marker--concluded {
   stroke: #666;
@@ -302,4 +303,51 @@
 
 .sidebar-content--anim {
   animation: slideFadeUp 560ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+.map-visual svg .marker image,
+.map-visual svg .event-marker image {
+  transform-box: fill-box; /* ensure transform-origin uses the image's own box */
+  transform-origin: 50% 100%; /* bottom center -> pin tip anchors to coord */
+  transition: transform 180ms ease, filter 180ms ease;
+  will-change: transform, filter;
+}
+
+@keyframes marker-pulse-scale {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 2px 6px rgb(255, 2, 128));
+  }
+  50% {
+    transform: scale(1.18);
+    filter: drop-shadow(0 8px 20px rgb(207, 4, 37));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 2px 6px rgb(113, 1, 1));
+  }
+}
+
+/* Active/ongoing events pulse continuously */
+.map-visual svg .marker--active image,
+.map-visual svg .event-marker .marker--active image {
+  animation: marker-pulse-scale 1.6s ease-in-out infinite;
+}
+
+/* When the group itself has an active class (older JS usage) — also pulse */
+.map-visual svg g.event-marker.active image {
+  animation: marker-pulse-scale 1.6s ease-in-out infinite;
+}
+
+/* Persist highlight for last-hovered marker */
+.map-visual svg g.event-marker.hovered image,
+.map-visual svg g.marker.hovered image {
+  transform: scale(1.4);
+}
+
+/* Persist visual for explicitly selected marker (initial default or clicked) */
+.map-visual svg g.event-marker.selected image,
+.map-visual svg g.marker.selected image {
+  transform: scale(1.4);
+  filter: drop-shadow(0 10px 26px rgba(196, 30, 58, 0.18));
 }

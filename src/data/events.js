@@ -10,8 +10,8 @@ const events = [
     address: 'Colombo Municipal Grounds, Colombo',
     description:
       'Free health screenings, consultations, and community education provided by volunteer medical teams. All community members welcome.',
-    type: 'active',
-    status: 'Ongoing',
+    type: 'concluded',
+    status: 'Completed',
   },
   {
     id: 'LK-12',
