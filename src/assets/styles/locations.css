@@ -203,7 +203,7 @@
 .event-details p {
   margin: 0.25rem 0 0 0;
   color: #333;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 /* Additional classes to replace inline styles from JSX */
@@ -216,6 +216,7 @@
 .event-subtitle {
   margin: 0;
   font-weight: 600;
+  font-size: 1.5rem !important;
 }
 
 .event-address {
@@ -226,8 +227,7 @@
 .event-description {
   margin: 0.5rem 0 0 0;
   color: #333;
-  white-space: pre-wrap; /* preserve newlines in description text */
-  font-size: 0.95rem;
+  text-align: justify;
 }
 
 /* Color variants for the pin image using CSS filters as a lightweight tinting
@@ -286,6 +286,7 @@
 /* Sidebar content animation: small upward slide + fade for content changes */
 .sidebar-content {
   display: block;
+  font-size: 1.12rem;
 }
 
 @keyframes slideFadeUp {

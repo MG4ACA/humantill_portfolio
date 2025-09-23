@@ -32,9 +32,42 @@
   transition: all 0.3s ease;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
+/* Ensure SVG group transforms originate from the marker center */
+/* Keep group transform origin but do not animate the group directly (preserve translate attribute) */
+.event-marker {
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+/* Animate the visual circles inside the marker so the marker position (translate) isn't overridden */
+.event-marker image {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
 
 .event-marker:hover {
   filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+.event-marker:hover image {
+  animation: pulse-hover-scale 1.6s infinite ease-out;
+}
+
+@keyframes pulse-hover-scale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .event-marker.active {

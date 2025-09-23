@@ -123,7 +123,7 @@
 
 .about-main-image {
   max-width: 100%;
-  width: 40%;
+  width: 55%;
   border-radius: 20px;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform-origin: center center;
@@ -194,8 +194,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
-  padding: 0 2rem 3rem;
+  margin-top: 5rem;
+  padding: 0 3rem;
 }
 
 .videos-row {
@@ -206,7 +206,7 @@
   width: 100%;
 }
 
-.videos-row video {
+.video-figure {
   width: calc((100% - 3rem) / 4);
   height: 170px;
   object-fit: cover;
@@ -216,14 +216,131 @@
   cursor: pointer;
 }
 
+.videos-row video {
+  /* width: calc((100% - 3rem) / 4);
+  height: 170px; */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  cursor: pointer;
+}
+
 .videos-row video:hover {
-  transform: scale(1.06);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+  /* fallback for small screens (keeps interaction simple) */
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Desktop: pop the hovered video out and center it in the viewport */
+@media (min-width: 769px) {
+  .videos-row {
+    position: relative;
+  }
+
+  /* Allow scaled children to overflow their row (so they aren't clipped) */
+  .videos-row,
+  .hero-videos {
+    overflow: visible;
+  }
+
+  .videos-row video:hover {
+    /* Scale from the video's own position (no fixed positioning) */
+    /* Default scale from center */
+    transform-origin: center center;
+    transform: scale(3);
+    position: relative;
+    z-index: 999;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+    border-radius: 12px;
+    width: 20vw;
+    height: auto;
+    cursor: pointer;
+    transition: transform 220ms ease, box-shadow 220ms ease, opacity 180ms ease;
+  }
+
+  .videos-row > .video-figure:first-child:hover video {
+    transform-origin: left center;
+  }
+
+  .videos-row > .video-figure:last-child:hover video {
+    transform-origin: right center;
+  }
+
+  /* Dim other videos while one is popped out */
+  .videos-row:hover video:not(:hover) {
+    opacity: 0.28;
+    transform: none;
+  }
 }
 
 @media (max-width: 768px) {
   .videos-row video {
     width: calc((100% - 3rem) / 2);
+    height: 140px;
+  }
+}
+
+/* Figure wrapper and overlay play button */
+.video-figure {
+  position: relative;
+  display: block;
+  width: calc((100% - 3rem) / 4);
+}
+
+.video-figure video {
+  display: block;
+  width: 100%;
+  height: 170px;
+  border-radius: 8px;
+}
+
+.video-play-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Overlay visibility: show by default, hide when the video is playing */
+.video-figure .video-play-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 160ms ease;
+}
+
+.video-figure.playing .video-play-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Ensure poster is shown again after video is stopped/paused */
+.video-figure video {
+  -webkit-user-drag: none;
+}
+
+.video-figure:not(.playing) video[poster] {
+  /* keep poster visible when not playing */
+  object-fit: cover;
+}
+
+.video-figure:focus {
+  outline: 2px solid rgba(196, 30, 58, 0.6);
+  outline-offset: 6px;
+}
+
+@media (max-width: 768px) {
+  .video-figure {
+    width: calc((100% - 3rem) / 2);
+  }
+  .video-figure video {
     height: 140px;
   }
 }
