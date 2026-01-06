@@ -134,7 +134,7 @@ export default function About() {
                 className="w-[9vw] pr-[1rem]"
               />
               <h2 className="section-title-about-meththa-foundation font-semibold">
-                ABOUT METHTHA JEEWITHALOKA
+                ABOUT METHTHA FOUNDATION
               </h2>
             </div>
             <p>

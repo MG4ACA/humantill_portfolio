@@ -53,6 +53,7 @@
   font-size: 1rem;
   opacity: 0.8;
   margin-bottom: 0;
+  margin-top: 1rem;
 }
 
 /* Subtle slide+fade animation for CTA content */
@@ -118,6 +119,78 @@
   padding: 2rem 0;
 }
 
+/* Account Details Inline */
+.account-details-inline {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideDown 0.3s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.account-details-inline h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.75rem;
+}
+
+.account-details-inline .account-info {
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.account-details-inline .account-info p {
+  margin: 0.6rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.account-details-inline .account-info strong {
+  color: var(--white);
+  display: inline-block;
+  min-width: 130px;
+}
+
+.account-details-inline .account-number {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+/* Remove old modal styles */
+.account-details-modal {
+  display: none;
+}
+
+.account-details-content {
+  display: none;
+}
+
+.close-btn {
+  display: none;
+}
+
 @media (max-width: 480px) {
   .cta-buttons {
     flex-direction: column;
@@ -127,5 +200,27 @@
   .cta-buttons .btn {
     width: 100%;
     max-width: 320px;
+  }
+
+  .account-details-content {
+    padding: 1.5rem;
+  }
+
+  .account-details-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .account-info {
+    padding: 1rem;
+  }
+
+  .account-info strong {
+    min-width: 100px;
+  }
+
+  .close-btn {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.75rem;
   }
 }

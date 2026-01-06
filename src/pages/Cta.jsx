@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../assets/styles/cta.css';
 
 export default function Cta() {
   const rootRef = useRef(null);
+  const [showAccountDetails, setShowAccountDetails] = useState(false);
 
   useEffect(() => {
     const node = rootRef.current;
@@ -44,9 +45,31 @@ export default function Cta() {
           </p>
 
           <div className="cta-buttons">
-            <button className="btn btn-primary btn-large pulse">Donate Now</button>
-            <button className="btn btn-secondary btn-large">Volunteer</button>
+            <button
+              className="btn btn-primary btn-large pulse"
+              onClick={() => setShowAccountDetails(!showAccountDetails)}
+            >
+              Donate Now
+            </button>
+            {/* <button className="btn btn-secondary btn-large">Volunteer</button> */}
           </div>
+
+          {showAccountDetails && (
+            <div className="account-details-inline">
+              <h3>Bank Account Details</h3>
+              <div className="account-info">
+                <p>
+                  <strong>Organization:</strong> Meththa Rehabilitation Foundation
+                </p>
+                <p>
+                  <strong>Bank:</strong> Bank of Ceylon - Maho Branch
+                </p>
+                <p>
+                  <strong>Account Number:</strong> <span className="account-number">83706522</span>
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="cta-info">
             <p>

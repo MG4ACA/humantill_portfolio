@@ -53,11 +53,7 @@ export default function Navbar() {
       <div className="nav-container">
         <div className="nav-logo">
           <div className="logo-container">
-            <img
-              src="/images/logos/jeewithaloka-english-logo.png"
-              alt="HumaniTill Logo"
-              className="main-logo"
-            />
+            <img src="/images/logos/maliban-logo.png" alt="HumaniTill Logo" className="main-logo" />
           </div>
         </div>
 
