@@ -58,9 +58,12 @@ export default function Footer() {
           </div>
           <div className="footer-section">
             <h4>Contact</h4>
-            <p>Email: info@humanitill.lk</p>
-            <p>Phone: +94 11 234 5678</p>
-            <p>Address: Colombo, Sri Lanka</p>
+            <p>Email: cic@malibangroup.lk</p>
+            <p>Phone: +94 11 5555 000</p>
+            <p>
+              Address: Maliban Biscuit Manufactories (Pvt) Limited, P.O.Box - 389, Galle Road,
+              Rathmalana, Sri Lanka
+            </p>
           </div>
         </div>
         <div className="footer-bottom">
