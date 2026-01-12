@@ -43,7 +43,7 @@ export default function Gallery() {
     setTimeout(() => {
       setCurrentIndex(wrapped);
       setInfoOpacity(1);
-    }, 300);
+    }, 3000000);
 
     // clear animating flag after CSS transition window (matches original 800ms)
     setTimeout(() => setIsAnimating(false), 800);

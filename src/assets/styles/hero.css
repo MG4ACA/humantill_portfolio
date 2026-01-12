@@ -203,6 +203,7 @@
     grid-template-columns: 1fr;
     justify-content: center;
     text-align: center;
+    width: 70vw;
   }
 
   .hero-title {

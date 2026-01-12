@@ -42,6 +42,30 @@
   .card.right-2 {
     transform: translateX(300px) scale(0.75) translateZ(-250px);
   }
+
+  .dots {
+    margin: 1rem 0;
+  }
+  .card.left-1 {
+    left: 7rem;
+  }
+  .card.right-1 {
+    right: 7rem;
+  }
+
+  .card.left-2 {
+    left: 11rem;
+  }
+  .card.right-2 {
+    right: 11rem;
+  }
+
+  .nav-arrow.left {
+    left: -20px !important;
+  }
+  .nav-arrow.right {
+    right: -20px !important;
+  }
 }
 
 .carousel-track {
@@ -57,7 +81,7 @@
 
 .card {
   position: absolute;
-  width: 50vw;
+  width: 55vw;
   background: white;
   border-radius: 20px;
   overflow: hidden;

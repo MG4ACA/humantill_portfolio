@@ -25,14 +25,29 @@
 
 @media (max-width: 768px) {
   .locations .map-container {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
   .locations .sidebar {
-    order: 2;
+    /* order: 2; */
     flex: 0 0 auto;
+    width: 45vw;
+    left: -30px;
+    position: relative;
   }
   .locations .map-section {
     order: 1;
+    position: relative;
+  }
+
+  .map-visual svg.map-svg {
+    width: 40vw !important; /* override inline style */
+  }
+  .locations .map-container {
+    justify-content: space-between;
+  }
+
+  .event-subtitle {
+    font-size: 1.3rem !important;
   }
 }
 

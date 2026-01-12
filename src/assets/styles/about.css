@@ -139,7 +139,7 @@
 
 /* Meththa foundation / partner section styling (moved from root style.css) */
 .about-meththa-foundation {
-  background: url('/images/maliban-jeewithaloka.svg') center center/cover no-repeat;
+  background: url('/images/maliban-jeewithaloka.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -186,6 +186,33 @@
 
   .about-stats {
     flex-direction: column;
+  }
+  .about-text {
+    padding-left: 0rem;
+  }
+  .about-meththa-foundation {
+    background-position: left;
+  }
+
+  .about-meththa-content {
+    width: 100vw;
+    border-radius: 0;
+    box-shadow: 1px 12px 41px rgb(0 0 0 / 1%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 0;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0 0 0;
+  }
+  .about-meththa-content-inner {
+    width: 90vw;
+  }
+  .about-meththa-content-inner img {
+    width: 15vw;
+  }
+
+  .stat-item {
+    flex: 0;
   }
 }
 
