@@ -51,6 +51,35 @@
   }
 }
 
+@media (max-width: 480px) {
+  .locations .section-title {
+    font-size: 1.5rem;
+  }
+  .locations .section-subtitle {
+    font-size: 1rem;
+  }
+  .locations .event-subtitle {
+    font-size: 1.2rem !important;
+  }
+  .event-details .sidebar-content p {
+    font-size: 0.9rem;
+  }
+  .locations .event-description {
+    text-align: justify;
+  }
+  .locations .map-container {
+    flex-direction: column;
+  }
+  .locations .sidebar {
+    order: 2;
+    width: 90vw;
+  }
+  .locations .map-visual {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 /* SVG map helpers */
 .map-visual svg {
   width: 100%;

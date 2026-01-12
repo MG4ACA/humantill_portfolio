@@ -17,9 +17,9 @@ export default function Hero() {
               <strong>Restoring Mobility. Restoring Dignity.</strong>
             </h2>
             <h2 className="py-[0.5rem]">
-              <strong> A STEP TOWARDS A LIFE REGAINED .</strong>
+              <strong> A STEP TOWARDS A LIFE REGAINED</strong>
             </h2>
-            <p className="hero-description">
+            <p className="hero-description" style={{ marginBottom: 10 }}>
               HumaniTill is more than a donation box, it's a beacon of hope.
             </p>
             <p style={{ marginBottom: 10 }}>

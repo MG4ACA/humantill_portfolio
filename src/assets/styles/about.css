@@ -216,6 +216,44 @@
   }
 }
 
+@media (max-width: 480px) {
+  .videos-row {
+    flex-wrap: wrap;
+  }
+  .videos-row .video-figure {
+    width: 30vw;
+    height: auto;
+  }
+  .about-text h1 {
+    font-size: 2rem;
+  }
+  .about-text p,
+  .about-text .quote-section blockquote {
+    font-size: 0.7rem;
+  }
+  .about-meththa-content {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .about-meththa-content-inner h2 {
+    font-size: 1rem;
+  }
+
+  .about-meththa-content-inner p {
+    font-size: 0.7rem;
+  }
+
+  .about-meththa-content-inner img {
+    width: 21vw;
+  }
+  .about-meththa-content-inner div {
+    padding-bottom: 1rem;
+  }
+}
+
 /* Videos row used by VideoGrid component */
 .hero-videos {
   width: 100%;

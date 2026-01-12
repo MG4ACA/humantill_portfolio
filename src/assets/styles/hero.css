@@ -27,13 +27,6 @@
   justify-content: flex-start;
 }
 
-.hero-title {
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  line-height: 1.1;
-}
-
 .hero-rest-container {
   border-radius: 23px;
   box-shadow: 1px 12px 41px rgb(0 0 0 / 1%);
@@ -206,10 +199,6 @@
     width: 70vw;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
   .hero-subtitle {
     font-size: 1.8rem;
   }
@@ -224,12 +213,34 @@
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+  .hero-content {
+    width: 90vw;
+    bottom: -60px;
+    position: relative;
+  }
+  .hero-rest-container {
+    padding: 1.5rem 1rem;
+  }
+  .hero-rest-container .hero-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 0 0 0;
+  }
+  .hero-rest-container h2 {
+    font-size: 0.9rem;
+    padding-bottom: 0rem;
+  }
+  .hero-rest-container p {
+    font-size: 0.7rem;
+    text-align: justify;
   }
 
-  .hero-subtitle {
-    font-size: 1.5rem;
+  .hero-text {
+    width: inherit;
+  }
+
+  .humani-till-logo-container {
+    width: 50vw;
   }
 
   .section-title {
@@ -242,5 +253,9 @@
 
   .timeline-content {
     margin-left: 60px !important;
+  }
+
+  .hero-buttons a {
+    font-size: 0.8rem;
   }
 }
